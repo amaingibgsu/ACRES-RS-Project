@@ -1,0 +1,2205 @@
+
+    <html>
+    <head>
+        <link rel="stylesheet" href="https://cdn.datatables.net/1.13.6/css/jquery.dataTables.min.css">
+        <style>
+            body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; padding: 40px; background-color: #f4f7f6; }
+            h2 { color: #2c3e50; border-bottom: 2px solid #27ae60; padding-bottom: 10px; }
+            .card-box { background: white; padding: 20px; border-radius: 8px; box-shadow: 0 4px 6px rgba(0,0,0,0.1); margin-bottom: 50px; }
+            table { font-size: 0.85em; width: 100% !important; }
+            th { background-color: #27ae60 !important; color: white !important; }
+        </style>
+    </head>
+    <body>
+        <h1>Supplementary Material S2: ACRES RS Suitability Matrix</h1>
+        <p>Use the search box in each table to filter by RS Technology, Accuracy, or ACRES Action.</p>
+    <div class='card-box'><h2>1. Grassland scorecard</h2><table border="1" class="dataframe display nowrap">
+  <thead>
+    <tr style="text-align: right;">
+      <th>Score Card</th>
+      <th>ACRES Action</th>
+      <th>Score Value</th>
+      <th>Score Unit</th>
+      <th>Resolution</th>
+      <th>RS Technology</th>
+      <th>Accuracy</th>
+      <th>Method</th>
+      <th>Reference</th>
+      <th>Detectability</th>
+      <th>Accuraccy</th>
+      <th>RS is appropriate</th>
+      <th>Comments</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>ACRES Grassland scorecard</td>
+      <td>A1 Number of positive indicators</td>
+      <td>0–4 = 0, 5–8 = 10, 9–12 = 20, 13+ = 25</td>
+      <td>based on count</td>
+      <td>Individual plant occurrences (plant scale)</td>
+      <td>UAV (drone), High-res RGB, Multispectral</td>
+      <td>classification accuracy of 86.2% for 22 plant species (Dyrmann et al., 2016)</td>
+      <td>OBIA,Deep CNN, AI/ML object detection (species-level if dominant)</td>
+      <td>(Dyrmann et al., 2016; Sun et al., 2017)</td>
+      <td>&lt;1m</td>
+      <td>Low</td>
+      <td>PARTIAL</td>
+      <td>Only dominant species are detectable by drone or AI; most require a field survey. Most positive indicator plants (especially small herbs) are too small or seasonally limited for RS to detect accurately. Large species like heathers, rushes, or orchids are detectable by drones when flowering. - Can RS separate soils (Mineral Soils, peat soils)? - TBD</td>
+    </tr>
+    <tr>
+      <td>ACRES Grassland scorecard</td>
+      <td>A2 Cover of all positive indicators</td>
+      <td>Low = 0, Moderate = 10, High = 20, Very high = 25</td>
+      <td>based on % cover</td>
+      <td>Entire field (broad spatial cover)</td>
+      <td>Sentinel-2, UAV, Landsat 8, WorldView-3</td>
+      <td>Support Vector Machine (SVM) method achieved an accuracy of 87.6% on the Indian Pines hyperspectral dataset and 90.4% on the Landsat TM multispectral dataset. Random Forest (RF) gained 87.0% and 89.8% accuracy on the same datasets, respectively. Boosted Decision Trees (BDT) had 85.8% (Indian Pines) and 88.5% (Landsat TM), Artificial Neural Networks (ANN) had 86.5% and 88.2%, k-Nearest Neighbours (k-NN) had 83.1% and 86.7%, and single Decision Trees (DT) had 74.8% and 82.5%.;</td>
+      <td>NDVI, EVI, OBIA, Random Forest, SVM, supervised classification, Decision tree classifiers</td>
+      <td>(Maxwell et al., 2018; Immitzer et al., 2012)</td>
+      <td>10m (Sentinel-2), &lt;1m (UAV)</td>
+      <td>Med</td>
+      <td>PARTIAL</td>
+      <td>Large patches may be detected; fine-scale species composition not reliably mapped.</td>
+    </tr>
+    <tr>
+      <td>ACRES Grassland scorecard</td>
+      <td>A3 Combined cover of negative indicators/weeds</td>
+      <td>High = -20, Moderate = -10, Low &lt;5% =</td>
+      <td>based on % cover</td>
+      <td>Field</td>
+      <td>Sentinel-2, UAV, Landsat 8, WorldView-3</td>
+      <td>OBIA produced a weed coverage map with 86 % Accuracy (Peña et al., 2013)</td>
+      <td>NDVI, EVI, OBIA, Random Forest, SVM, supervised classification</td>
+      <td>(Peña et al., 2013; Kamilaris &amp; Prenafeta-Boldú, 2018)</td>
+      <td>10m (Sentinel-2), &lt;1m (UAV)</td>
+      <td>Med</td>
+      <td>PARTIAL</td>
+      <td>Only dense or large patches of weeds, such as, docks, thistles, and nettles, are detectable; scattered weeds require a field survey.</td>
+    </tr>
+    <tr>
+      <td>ACRES Grassland scorecard</td>
+      <td>A4(a) Vegetation structure (primarily grazed)</td>
+      <td>Over-grazed = -10, Moderate = 10/15, Under-grazed = -10, Good = 25</td>
+      <td>Score (based on sward quality)</td>
+      <td>Entire field</td>
+      <td>UAV (drone), LiDAR, Sentinel-1 SAR</td>
+      <td>1. Improvement in horizontal accuracy from 0.61 m to 0.34 m (root mean square error, RMS, against ground control) Wallace et al., 2012) 2. LiDAR-derived maximum canopy height and FVC were the best predictors of grassland AGB, achieving a coefficient of determination (R²) of 0.54 and a root mean square error (RMSE) of 64.76 g/m² (Zang et al., 2020.</td>
+      <td>LiDAR canopy height, 3D structure analysis, SAR backscatter, OBIA</td>
+      <td>(Wallace et al., 2012;Zang et al., 2020)</td>
+      <td>&lt;1m (UAV/LiDAR), 10m (SAR)</td>
+      <td>High</td>
+      <td>YES</td>
+      <td>Sward height and structure can be assessed with drone/LiDAR/SAR.</td>
+    </tr>
+    <tr>
+      <td>ACRES Grassland scorecard</td>
+      <td>A4(b) Vegetation structure (cut for hay/silage)</td>
+      <td>Scored similarly to A4(a) based on structure quality</td>
+      <td>Score (based on sward quality)</td>
+      <td>Field‑level structure</td>
+      <td>UAV (drone), LiDAR, Sentinel-1 SAR</td>
+      <td>1. The ANFIS model achieved the highest accuracy, with an R² of 0.85 and RMSE of 11.07 kg DM/ha/day for the Moorepark site, and an R² of 0.76 and RMSE of 15.35 kg DM/ha/day for the Grange site (Ali et al., 2017). 2. Coefficients of determination (R²) reported for biomass estimation using RS typically range from 0.7 to above 0.9 in favorable conditions, with LiDAR and combined approaches often achieving the highest accuracies (Rahman &amp; Gamon, 2015). 3. RS-based grassland yield estimation achieved an R² ( 0.67) and  RMSE (1.46 t/ha) (Reinermann et al., 2020).</td>
+      <td>LiDAR canopy height, 3D structure analysis, SAR backscatter, OBIA; multiple linear regression (MLR), artificial neural networks (ANN), and adaptive neuro-fuzzy inference system (ANFIS) models;  MAJA-processed Sentinel-2 Level 2A time series data from both S2A and S2B satellites</td>
+      <td>(Ali et al., 2017; Rahman &amp; Gamon, 2015;Reinermann et al., 2020)</td>
+      <td>&lt;1m (UAV/LiDAR), 10m (SAR)</td>
+      <td>High</td>
+      <td>YES</td>
+      <td>Same as A4(a); mowing patterns and regrowth structure can be mapped using drones or satellite radar.</td>
+    </tr>
+    <tr>
+      <td>ACRES Grassland scorecard</td>
+      <td>A5 Marsh Fritillary suitability</td>
+      <td>Yes = score based on suitability (0–10), No = 0</td>
+      <td>based on suitability (qualitative)</td>
+      <td>Field‑level structure</td>
+      <td>UAV (drone), High-res RGB</td>
+      <td>NaN</td>
+      <td>OBIA, CNN, AI/ML object detection for Devil’s-bit Scabious (if dominant)</td>
+      <td>(Sun et al., 2017;Dyrmann et al., 2016)</td>
+      <td>&lt;1m</td>
+      <td>Low</td>
+      <td>NO</td>
+      <td>Requires detection of Devil’s Bit Scabious at the plant level, which RS cannot reliably detect; best done in the field.</td>
+    </tr>
+    <tr>
+      <td>ACRES Grassland scorecard</td>
+      <td>A6 Field boundary quality (worst 30m)</td>
+      <td>Poor = 0, Moderate = 5, Good = 10</td>
+      <td>qualitative (boundary quality)</td>
+      <td>30m boundary</td>
+      <td>UAV (drone), High-res RGB, LiDAR</td>
+      <td>NaN</td>
+      <td>OBIA, edge detection, CNN, LiDAR for structure</td>
+      <td>(Puliti et al., 2020)</td>
+      <td>&lt;1m</td>
+      <td>Med</td>
+      <td>PARTIAL</td>
+      <td>Large hedgerows, walls, and fences are detectable by drone or high-resolution satellite. Quality issues like gaps or species composition need field inspection.</td>
+    </tr>
+    <tr>
+      <td>ACRES Grassland scorecard</td>
+      <td>B1 Evidence of damaging activities</td>
+      <td>None = 0, Low = -10, Moderate = -20, High = -30</td>
+      <td>Score (based on % of area impacted)</td>
+      <td>Farm level</td>
+      <td>UAV (drone), Sentinel-2, Landsat 8</td>
+      <td>NaN</td>
+      <td>Change detection (multi-temporal), OBIA, AI/ML</td>
+      <td>(Radoux et al., 2016)</td>
+      <td>10m (Sentinel-2), &lt;1m (UAV)</td>
+      <td>Med</td>
+      <td>PARTIAL</td>
+      <td>Large-scale damage is detectable by RS; subtle damage (dumping) needs field validation.</td>
+    </tr>
+    <tr>
+      <td>ACRES Grassland scorecard</td>
+      <td>B2 Level of risk to water bodies</td>
+      <td>None = 0, Low = -5, Moderate = -15, High = -25</td>
+      <td>Risk (qualitative)</td>
+      <td>Farm level</td>
+      <td>Sentinel-2, UAV, Landsat 8, WorldView-3</td>
+      <td>NaN</td>
+      <td>Proximity analysis, NDWI, OBIA, supervised classification</td>
+      <td>(McFeeters, 1996)</td>
+      <td>10m (Sentinel-2), &lt;1m (UAV), (30m Landsat 8)</td>
+      <td>Med</td>
+      <td>PARTIAL</td>
+      <td>Proximity to water bodies can be mapped; pollution risk needs field assessment. - Theoritically</td>
+    </tr>
+    <tr>
+      <td>ACRES Grassland scorecard</td>
+      <td>B3 Extent of bare soil &amp; erosion</td>
+      <td>None = 0, Low = -5, Moderate = -10, High = -20</td>
+      <td>% cover of field/bare soil</td>
+      <td>Farm level</td>
+      <td>Sentinel-2, UAV, Landsat 8, WorldView-3</td>
+      <td>NaN</td>
+      <td>Bare Soil Index (BSI), NDVI, OBIA, supervised classification</td>
+      <td>(Lobell &amp; Asner, 2002)</td>
+      <td>10m (Sentinel-2), &lt;1m (UAV),(30m Landsat 8)</td>
+      <td>High</td>
+      <td>YES</td>
+      <td>Bare soil patches can be mapped with high accuracy even with moderate resolutions.</td>
+    </tr>
+    <tr>
+      <td>ACRES Grassland scorecard</td>
+      <td>B4 Cover of non-native invasive species</td>
+      <td>None = 0, Low = -5, Moderate = -10, High = -20</td>
+      <td>% cover of field</td>
+      <td>Farm level</td>
+      <td>UAV (drone), Sentinel-2, WorldView-3</td>
+      <td>NaN</td>
+      <td>OBIA, CNN, Random Forest, AI/ML object detection</td>
+      <td>(Michez et al., 2016)</td>
+      <td>10m (Sentinel-2), &lt;1m (UAV)</td>
+      <td>Low-Med</td>
+      <td>PARTIAL</td>
+      <td>Large patches of invasive species (Japanese knotweed) are detectable; scattered individuals not reliably mapped. Rhododendron - Killeny national park - Encroachment into farmlands</td>
+    </tr>
+    <tr>
+      <td>ACRES Grassland scorecard</td>
+      <td>B5 Extent of spreading immature scrub</td>
+      <td>None = 10, Low = 0, Moderate = -10, High = -20</td>
+      <td>% cover of field</td>
+      <td>Farm level</td>
+      <td>UAV (drone), Sentinel-2, WorldView-3</td>
+      <td>NaN</td>
+      <td>OBIA, NDVI, Random Forest, supervised classification</td>
+      <td>(Getzin et al., 2012)</td>
+      <td>10m (Sentinel-2), &lt;1m (UAV)</td>
+      <td>Med</td>
+      <td>PARTIAL</td>
+      <td>Large patches of scrub or brumble detectable by drone imagery ; small seedlings not reliably mapped.</td>
+    </tr>
+    <tr>
+      <td>ACRES Grassland scorecard</td>
+      <td>B6 Cover of bracken</td>
+      <td>Low/none = 0, Moderate = -10, High = -20</td>
+      <td>% cover of field</td>
+      <td>Farm level</td>
+      <td>UAV (drone), Sentinel-2, WorldView-3</td>
+      <td>NaN</td>
+      <td>OBIA, NDVI, supervised classification</td>
+      <td>(Holland &amp; Aplin, 2013; Matongera, 2016)</td>
+      <td>10m (Sentinel-2), &lt;1m (UAV)</td>
+      <td>High</td>
+      <td>YES</td>
+      <td>Dense stands easily mapped; sparse fronds or shaded areas may lower detection reliability slightly - mapped in Landcover</td>
+    </tr>
+  </tbody>
+</table></div><div class='card-box'><h2>2. Woodland SCORECARD</h2><table border="1" class="dataframe display nowrap">
+  <thead>
+    <tr style="text-align: right;">
+      <th>Score Card</th>
+      <th>ACRES Action</th>
+      <th>Score Value</th>
+      <th>Score Unit</th>
+      <th>Resolution</th>
+      <th>RS Technology</th>
+      <th>Accuracy</th>
+      <th>Method</th>
+      <th>Reference</th>
+      <th>Detectability</th>
+      <th>Accuraccy</th>
+      <th>RS is appropriate</th>
+      <th>Comments</th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>ACRES Scrub/Woodland SCORECARD</td>
+      <td>A1-Sa: Scrub Structure and Diversity</td>
+      <td>Poor=40, Moderate=60, Good=80, Very Good=100</td>
+      <td>Qualitative (species count)</td>
+      <td>Individual scrub patches</td>
+      <td>UAV-LiDAR, Hyperspectral (e.g., HySpex), Sentinel-2</td>
+      <td>1) UAV-derived photogrammetric point cloud modeling is utilized to map and classify scrub vegetation based on height (Vafidis et al., 2021). 2) quantification of temporal changes in scrub cover by generating height maps from UAV-derived photogrammetric point clouds and applying height thresholds to distinguish scrub vegetation from other land cover types (Jordan et al., 2024).</td>
+      <td>LiDAR-derived canopy height models (CHM), hyperspectral classification (SVM/CNN), OBIA for patch delineation, Sentinel-2 NDVI time series</td>
+      <td>(Jordan et al., 2024;Vafidis et al., 2021)</td>
+      <td>&lt;1m (UAV), 10m (Satellite)</td>
+      <td>High</td>
+      <td>YES</td>
+      <td>UAV-LiDAR detects height/structure; hyperspectral IDs species. Sentinel-2 tracks seasonal changes.</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <td>NaN</td>
+      <td>A1-Wa: Woodland Canopy Layer</td>
+      <td>Poor=0, Moderate=30, Good=60</td>
+      <td>% native cover</td>
+      <td>Canopy level</td>
+      <td>UAV-LiDAR, GEDI (spaceborne LiDAR)</td>
+      <td>1. Airborne laser scanning (ALS, or LiDAR) data to derive forest structure indicators( canopy height, cover, and complexity), which are then used to assess and monitor biodiversity in forests and woodlands (Oivonen et al., 2023) 2. Global Ecosystem Dynamics Investigation (GEDI) mission, which utilizes a spaceborne waveform LiDAR (Light Detection and Ranging) system (Dubayah et al., 2020).</td>
+      <td>GEDI waveform analysis, UAV-LiDAR point cloud segmentation, Random Forest classification</td>
+      <td>(Toivonen et al., 2023; (Dubayah et al., 2020)</td>
+      <td>&lt;1m (UAV), 25m (GEDI)</td>
+      <td>High</td>
+      <td>YES</td>
+      <td>GEDI provides global canopy metrics; UAV-LiDAR resolves fine-scale structure.</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <td>NaN</td>
+      <td>A1-Wb: Woodland Shrub Layer</td>
+      <td>Poor=0, Moderate=10, Good=20</td>
+      <td>Qualitative</td>
+      <td>Understory</td>
+      <td>UAV-LiDAR (multi-return), Terrestrial Laser Scanning (TLS)</td>
+      <td>airborne LiDAR and very high-resolution RGB imagery combined with deep learning (AlexNet, VGG16, ResNet50) to map tree species diversity in a tropical wetland, achieving a best overall species classification accuracy of 73.25% with VGG16 (Sun et al., 2019). 2. Terrestrial laser scanning (TLS), a ground-based LiDAR method, for detailed 3D forest structure measurement and ecological monitoring (Calders et al., 2020).</td>
+      <td>Multi-return LiDAR filtering, Terrestrial laser scanning (TLS), Deep learning for understory mapping</td>
+      <td>Sun et al. (2019); (Calders et al., 2020)</td>
+      <td>&lt;1m</td>
+      <td>Med</td>
+      <td>PARTIAL</td>
+      <td>Dense shrubs detectable; sparse understory may require field validation.</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <td>NaN</td>
+      <td>A1-Wc: Woodland Field Layer</td>
+      <td>Poor=0, Moderate=10, Good=20</td>
+      <td>Qualitative</td>
+      <td>Ground level</td>
+      <td>LiDAR</td>
+      <td>harmonic phenology model, spatial texture features, auxiliary LiDAR and soil data, and a random forest classifier to map understory plant communities in Connecticut deciduous forests at 10 m resolution, achieving an overall accuracy of approximately 93% for species mapping and 95% for binary understory presence. 2) canopy reflectance modeling approach using field data and simulated satellite reflectance spectra showed that understory vegetation can cause up to ±18% variation in red and ±10% in NIR reflectance, with a resulting LAI estimation variation of about 1.6 units and a negative linear relationship (r² = 0.6) between field LAI and understory degree (Eriksson et al., 2006).</td>
+      <td>harmonic phenology model for microhabitat mapping, LiDAR, canopy reflectance modeling; Leaf Area Index (LAI)</td>
+      <td>(Yang et al., 2023;  (Eriksson et al., 2006)</td>
+      <td>10m (Satellite)</td>
+      <td>Low-Med</td>
+      <td>PARTIAL</td>
+      <td>Dominant herbs/mosses detectable; rare species need field survey.</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <td>NaN</td>
+      <td>B1: Artificial Drainage</td>
+      <td>Drained=-20, Partly drained=-10, Historic=0, None=10\t</td>
+      <td>% area drained</td>
+      <td>Farm level</td>
+      <td>UAV-DEM (photogrammetry), Sentinel-1 SAR;  high-resolution multispectral and thermal imagery (from satellites and drones)</td>
+      <td>Reviewed studies report detection accuracies (overall accuracy) ranging from 70% to 95% (Carlsen et al., 2024) 2. Sentinel-1 SAR imagery and Random Forest machine learning to detect flooded areas, reporting a mean accuracy of 0.941 (SD = 0.048) across 19 flood events (Alonso-Sarria et al., 2025)</td>
+      <td>DEM-derived flow accumulation, SAR coherence change detection, OBIA for linear feature extraction</td>
+      <td>(Carlsen et al., 2024; Alonso-Sarria et al., 2025)</td>
+      <td>&lt;0.1m (UAV), 5m (SAR)</td>
+      <td>High</td>
+      <td>YES</td>
+      <td>UAV photogrammetry resolves small drains; SAR detects wetness changes.</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <td>NaN</td>
+      <td>C1: Damaging Activities (e.g., burning, dumping, erosion)</td>
+      <td>High=-30, Moderate=-20, Low=-10, None=0</td>
+      <td>% area affected</td>
+      <td>Farm level</td>
+      <td>PlanetScope (3m), UAV-RGB</td>
+      <td>LiDAR  used to classify regional vegetation structure and checking disturbances (Fire nad timber harvesting) (Guo et al., 2017) 2.  (MSI) camera to collect aerial data, developed a novel normalized difference spectral index (NDSI) using principal component analysis (PCA), and applied threshold-based segmentation to identify tree species and assess woodland health in ancient and semi-natural woodland. classification identified oak (53%), silver birch (37%), empty space (9%), and dead trees (1%), which was corroborated by ground-truth field data (oak 47%, silver birch 46%, dead trees 7.4%), indicating a close correspondence and thus high accuracy</td>
+      <td>Multi-temporal NDVI anomaly detection, normalized difference spectral index (NDSI),, change detection (CNN)</td>
+      <td>(Guo et al., 2017</td>
+      <td>3m (Planet), &lt;1m (UAV)</td>
+      <td>High</td>
+      <td>YES</td>
+      <td>High-resolution satellites (e.g., Planet) enable weekly monitoring.</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <td>NaN</td>
+      <td>C2: Risk to Water Quality (flow, sediment, nutrient pressure)</td>
+      <td>High=-25, Moderate=-15, Low=-5, None=0</td>
+      <td>Proximity + land cover</td>
+      <td>Watershed</td>
+      <td>Sentinel-2 (NDWI), LiDAR-derived slope</td>
+      <td>Sentinel-2 NDWI/SWI indices and LiDAR-derived slope/TWI at 10m and &lt;1m spatial resolutions, respectively, with high accuracy for monitoring water quality and associated risks in inland waters (Chen et al., 2025; Tesfaye, 2024; Frontiers in Environmental Science, 2025) NDWI-based water body extraction: Overall accuracy &gt;95%, Kappa coefficient ~0.92 LiDAR-derived slope/TWI for wetness mapping: RMSE &lt;0.5 (unitless index scale), spatial accuracy &lt;1m (Chen et al., 2025)</td>
+      <td>NDWI/SWI indices, LiDAR-derived slope/topographic wetness index (TWI), hydrological modeling</td>
+      <td>(Chen et al., 2025; Tesfaye, 2024; Frontiers in Environmental Science, 2025)</td>
+      <td>10m (Satellite), &lt;1m (LiDAR)</td>
+      <td>High</td>
+      <td>YES</td>
+      <td>integrating Remote Sensing (RS) data with computational models to precisely assess environmental risks (e.g., water pollution, erosion)</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <td>NaN</td>
+      <td>C3: Bare Soil &amp; Erosion</td>
+      <td>High=-20, Moderate=-10, Low=0, None=10</td>
+      <td>% bare soil</td>
+      <td>Field level</td>
+      <td>UAV-RGB, Sentinel-2 (BSI)</td>
+      <td>1. Review on UAVs and satellite indices for continuous, repeatable, and high-resolution monitoring of habitat condition and threats such as bare soil and erosion 2.  Hyperspectral Bare Soil Index (HBSI), achieving over 91% accuracy for bare soil mapping using Sentinel-2 and AVIRIS-NG images (Wu et al., 2023)</td>
+      <td>Bare Soil Index (BSI), UAV orthomosaic segmentation (AI), erosion feature mapping; Hyperspectral Bare Soil Index (HBSI)</td>
+      <td>(Institute for European Environmental Policy, 2024; Wu et al., 2023)</td>
+      <td>&lt;1m (UAV), 10m (Satellite)</td>
+      <td>High</td>
+      <td>YES</td>
+      <td>UAV detects small-scale erosion; Sentinel-2 tracks trends.</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <td>NaN</td>
+      <td>C4: Non-native Invasive Species Cover</td>
+      <td>High=-20, Moderate=-10, Low=-5, None=0</td>
+      <td>% cover</td>
+      <td>Patch level</td>
+      <td>UAV-hyperspectral, WorldView-3</td>
+      <td>Airborne LiDAR point cloud segmentation achieved accurate detection of understory trees—matching overstory segmentation accuracy—when point density reached approximately 170 points/m²  (Hamraz et al., 2017) 2. UAV-hyperspectral and high-resolution satellite imagery (e.g., WorldView-3), combined with pixel/object-based classification and phenology analysis, can map non-native invasive species at patch level with overall accuracies ranging from 85% to 89% for invasive plant cover detection (Nandasena et al., 2023; Stasolla et al., 2024)</td>
+      <td>Airborne LiDAR point cloud segmentation, pixel/object-based classification, phenology analysis</td>
+      <td>(Hamraz et al., 2017; (Nandasena et al., 2023; Stasolla et al., 2024)</td>
+      <td>&lt;1m (UAV), 1.2m (WorldView)</td>
+      <td>Med</td>
+      <td>PARTIAL</td>
+      <td>Flowering invasives detectable; seedlings need field checks.</td>
+      <td>NaN</td>
+    </tr>
+  </tbody>
+</table></div><div class='card-box'><h2>3. Peatland Scorecard </h2><table border="1" class="dataframe display nowrap">
+  <thead>
+    <tr style="text-align: right;">
+      <th>Score Card</th>
+      <th>ACRES Action</th>
+      <th>Score Value</th>
+      <th>Score Unit</th>
+      <th>Resolution</th>
+      <th>RS Technology</th>
+      <th>Accuracy</th>
+      <th>Method</th>
+      <th>Reference</th>
+      <th>Detectability</th>
+      <th>Accuraccy</th>
+      <th>RS is appropriate</th>
+      <th>Comments</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Acres Peatland Scorecard</td>
+      <td>A1 Positive indicators</td>
+      <td>Low: 0-2 = 0; Moderate: 3-5 = 5; High: 6+ = 10</td>
+      <td>Count (Presence/Absence)</td>
+      <td>individual plants cover</td>
+      <td>UAV (drone), High-res Multispectral, RGB; Airborne Hyperspectral and Laser Scanning Data</td>
+      <td>1. Accuracy of species achievable "to a limited extent" using hyperspectral data, with the shortwave infrared region (1100–2500 nm) being most informative (Salko et al., 2023);</td>
+      <td>hyperspectral reflectance measurements (350–2500 nm), ML object detection (dominant species), Object-Based Image Analysis (OBIA) and machine learning (e.g., Random Forest);</td>
+      <td>(Burnham et al., 2024; Duffy et al., 2022; Szporak-Wasilewska et al., 2021; Havertz, 2023; Yallop et al., 2024)</td>
+      <td>Low - Only dominant species (such as Sphagnum and Eriophorum) can be detected reliably</td>
+      <td>Low</td>
+      <td>PARTIAL</td>
+      <td>1. Only dominant species (e.g., Sphagnum, Eriophorum) detectable; field survey needed for full list. 2 UAVs are optimal for plot-scale studies but face scalability challenges for large-area surveys due to cost and data processing demands</td>
+    </tr>
+    <tr>
+      <td>Acres Peatland Scorecard</td>
+      <td>A2 sitive mosses, liverworts &amp; Lichens</td>
+      <td>Low: ≤10% = 0; Moderate: 10-30% = 10; High: ≥30% = 20</td>
+      <td>% cover</td>
+      <td>Farm level (UAV multi spectral/ Hyperspectral); [worldwide view 3 (0.3–1.2 m (regional)], [Sentinel-2 (Satellite) - regional]</td>
+      <td>Airborne Hyperspectral, UAV Multispectral, Sentinel-2, WorldView-3, UAV LiDAR,</td>
+      <td>Satellite data offers broad spatial and temporal coverage, its resolution is insufficient for features ≤1 m; aerial and UAV methods provide higher resolution—with UAVs offering the finest detail but limited scalability and high data processing demands—and LiDAR delivers the most accurate 3D elevation data, especially when combined with imagery for optimal peatland feature detection and analysis.</td>
+      <td>Spectral unmixing, OBIA, supervised classification ( Random Forest &amp;Recursive Feature Elimination with Cross-Validation (RFE-CV)</td>
+      <td>(Burnham et al., 2024; Connolly et al., 2023; Zhang et al., 2018; Szporak-Wasilewska et al., 2021; Yallop et al., 2024; Ghazaryan et al., 2024))</td>
+      <td>Low–Moderate (with high detectability rate of large patches by use of UAV Multispectral/Hyperspectral)</td>
+      <td>Low</td>
+      <td>PARTIAL</td>
+      <td>Large Sphagnum/liverwort patches detectable; fine-scale/rare species require field survey.; None of the current RS methods can reliably detect rare or fine-scale mosses, liverworts, or lichens - field surveys remain essential for these</td>
+    </tr>
+    <tr>
+      <td>Acres Peatland Scorecard</td>
+      <td>A3 Vegetation Structure</td>
+      <td>Over-grazed = -15; Moderate (over-grazed) = 10; Good = 30; Moderate (under-grazed) = 15; Under-grazed = -10</td>
+      <td>Structure</td>
+      <td>Farm level</td>
+      <td>Drone-derived Imagery ( UAV photogrammetry), drone-derived orthomosaics and digital terrain models (DTMs) combined with machine learning classification;  lidar-based terrain indices combined with machine learning modeling to map peatlands at 10 m spatial resolution across Sweden.</td>
+      <td>classification accuracy of microforms and plant functional types was consistently &gt;90% for all studied peatlands using drone-derived imagery and advanced classification techniques (Steenvoorden &amp; Limpens, 2023) 2. classification accuracy ranged from 88% for status maps to 72% for ecotope maps (Steenvoorden et al., 2024). 3) accuracy of 0.89–0.91 and a Matthew’s correlation coefficient of 0.79–0.81, depending on the peatland definition used (Rimondini et al., 2023)</td>
+      <td>LiDAR canopy height, 3D structure analysis, microtopography</td>
+      <td>(Burnham et al., 2024;Steenvoorden &amp; Limpens, 2023; Carless et al., 2019; Bourgeau-Chavez et al., 2018)</td>
+      <td>High</td>
+      <td>High</td>
+      <td>YES</td>
+      <td>Sward height, hummocks, and structure can be assessed using drones, LiDAR, or photogrammetry. Drone derived imagery Consistent for peatland-scale structure mapping</td>
+    </tr>
+    <tr>
+      <td>Acres Peatland Scorecard</td>
+      <td>B1 Surface hydrology and artificial drainage features</td>
+      <td>Intact = 20; Moderately intact = 10; Slightly altered = 0; Moderately altered = -15; Significantly altered = -30</td>
+      <td>Hydrology (qualitative)</td>
+      <td>Field</td>
+      <td>UAV LiDAR, UAV RGB, Sentinel-1 SAR</td>
+      <td>overall accuracies ranging from 80% to 95%, depending on the peatland type and landscape context.</td>
+      <td>synthetic aperture radar (SAR) remote sensing, specifically L-band and C-band radar data from airborne and satellite platforms (including JERS-1, ALOS PALSAR, and RADARSAT-2), along with optical imagery (Chavez et al. 2018),</td>
+      <td>(Connolly et al., 2023; Ikkala et al., 2022; Monteverde et al., 2021; Langhammer et al., 2024; Lendzioch, 2023))</td>
+      <td>High Accuracy (SAR)  for distinguishing peatlands from uplands and open water, especially in boreal regions, but is moderate to variable for differentiating peatland types or fine-scale features, with best results in open, treeless peatlands and reduced accuracy in forested or complex landscapes.</td>
+      <td>High</td>
+      <td>YES</td>
+      <td>Drainage features (drains, pools, and weytness) and hydrology detectable; field validation recommended. SAR useful for wetness/moisture in uplands and open water.</td>
+    </tr>
+    <tr>
+      <td>Acres Peatland Scorecard</td>
+      <td>C1 Evidence of damaging activities</td>
+      <td>None = 0; Low = -10; Moderate = -20; High = -30</td>
+      <td>Area affected</td>
+      <td>Field</td>
+      <td>optical remote sensing data, specifically the Normalized Burn Ratio (NBR); Sentinel-1, Sentinel-2, Landsat 8, SPOT 6 and 7</td>
+      <td>statistically significant relationships between NBR and both carbon stocks (negative correlation, Spearman’s rho = -0.664, p &lt; 0.05) and the hydrogen index (positive correlation, Spearman’s rho = 0.7, p &lt; 0.05), indicating that NBR is effective for detecting surface peat degradation.(Brown et al., 2023) 2. review of 59 case studies; many studies reporting an accuracy of overall classification accuracies between 70% and 95% for peatland mapping using supervised classification and machine learning methods (Czapiewski &amp; Szumińska, 2022).</td>
+      <td>Change detection, Supervised classification, machine learning (e.g., Random Forest, SVM), ML, backscatter time-series (sentinel-1)</td>
+      <td>(Brown et al., 2023; Czapiewski &amp; Szumińska, 2022;</td>
+      <td>moderate to high for identifying surface peat degradation and distinguishing between degraded and intact peatland areas; 2 Detectability vary widely depending on the method, sensor, and application.</td>
+      <td>High</td>
+      <td>YES</td>
+      <td>Large-scale damage detectable; subtle damage needs field input.</td>
+    </tr>
+    <tr>
+      <td>Acres Peatland Scorecard</td>
+      <td>C2 Risk to quality of natural water bodies</td>
+      <td>None = 0; Low = -5; Moderate = -15; High = -25</td>
+      <td>Risk</td>
+      <td>Field</td>
+      <td>UAV, Sentinel-2, NDWI, LiDAR</td>
+      <td>2. Water quality parameter retrieval (e.g., turbidity, chlorophyll-a): R² = 0.75–0.94, RMSE = 0.06–0.19 (mg/L for chlorophyll-a) (Tesfaye, 2024) 3. Water quality mapping (Sentinel-2): R² = 0.81–0.93 for various parameters and LiDAR-derived slope/TWI for hydrological risk: RMSE &lt;0.3 (index units), spatial accuracy &lt;1m (Ngamile et al., 2025)</td>
+      <td>Proximity analysis, NDWI, Saga Wetness Index(SWI)</td>
+      <td>(Tesfaye, 2024; Ngamile et al., 2025)</td>
+      <td>Low -moderate</td>
+      <td>Med</td>
+      <td>PARTIAL</td>
+      <td>Proximity to water bodies can be mapped; pollution risk needs field assessment.</td>
+    </tr>
+    <tr>
+      <td>Acres Peatland Scorecard</td>
+      <td>C3 bare soil erosion</td>
+      <td>\tLow = 10; Moderate = -10; High = -20</td>
+      <td>% cover</td>
+      <td>&lt;1 m (UAV), 10 m (Sentinel-2), 0.3 m (WorldView-3)</td>
+      <td>UAV RGB, WorldView-3; 10 m (Sentinel-2), 30 m (ALOS), field plots for validation</td>
+      <td>Sentinel-2/OBIA: 80–88% overall accuracy for bare peat mapping</td>
+      <td>OBIA, machine learning classification, multi-sensor fusion</td>
+      <td>(Abdelmajeed et al., 2024; Brown, S., et al.,2024; (IUCN UK Peatland Programme, 2024)</td>
+      <td>High for large and moderate patches; small patches require UAV/WorldView-3</td>
+      <td>High</td>
+      <td>YES</td>
+      <td>. Bare peat/erosion features mapped accurately; small patches need high-resolution (UAV/WorldView-3); Multi-sensor approach overcomes cloud/topography issues; field validation confirms reliability</td>
+    </tr>
+    <tr>
+      <td>Acres Peatland Scorecard</td>
+      <td>C4a Non-native species present</td>
+      <td>Absent = 0; Present = -10</td>
+      <td>Species count (Presence/Absence)</td>
+      <td>UAV: ~5cm; Satellite: 3-10m</td>
+      <td>UAV Hyperspectral, Sentinel-2, PlanetScope, WorldView-3, LiDAR, GEDI</td>
+      <td>CMTNet: 97.3–99.6% (OA) (Liu et al., 2025); YOLOv5: F1-score 0.91–0.92 ( Sarker et al., 2025); XGBoost: OA 0.94 (Räsänen et al., 2022))</td>
+      <td>OBIA, ML; CNN-Transformer (e.g., CMTNet), YOLOv5, XGBoost, OBIA</td>
+      <td>(Liu et al., 2025; Sarker et al., 2025;Wei et al., 2023; (Zhao et al., 2024; (Gautam et al., 2025)</td>
+      <td>High for large stands; improved detection of scattered individuals with hyperspectral + deep learning; LiDAR aids structure-based detection</td>
+      <td>High</td>
+      <td>Partial</td>
+      <td>Large stands detectable; scattered individuals not reliably mapped.UAV hyperspectral and high-res satellites (e.g., WorldView-3) enable detection of both large stands and scattered individuals. Deep learning models (CNN, Transformers, YOLOv5, XGBoost) increase mapping accuracy. LiDAR improves structural discrimination.</td>
+    </tr>
+    <tr>
+      <td>Acres Peatland Scorecard</td>
+      <td>C4b non-mative incasive species</td>
+      <td>None = 0; Low = -5; Moderate = -10; High = -20</td>
+      <td>Species count (Presence/Absence)</td>
+      <td>UAV: &lt;0.05m; Satellite: 10–30m</td>
+      <td>UAV Multispectral, Sentinel-2</td>
+      <td>UAV: 85–95% (F1-Score); Satellite: 70–85% (OA) - UAV-based methods offer high detectability (&gt;85% accuracy) for invasive species at fine scales, while Sentinel-2 provides moderate accuracy (70–85%) for landscape-level monitoring.</td>
+      <td>OBIA, ML, YOLO deep learning</td>
+      <td>Gautam et al. (2025); Martínez Prentice et al. (2024); Brown et al. (2023)</td>
+      <td>UAV: High (individual plants); Satellite: Moderate (large infestations)</td>
+      <td>High</td>
+      <td>Partial (UAV optimal)</td>
+      <td>UAV detects early-stage invasions; Satellite suitable for landscape-scale monitoring; Apply object-based image analysis (OBIA) and YOLO models to distinguish invasive species from native vegetation using spectral signatures; Deploy for site-specific, high-accuracy monitoring of invasive species (e.g., Japanese Knotweed, Siam weed). Optimal for early detection and small peatlands</td>
+    </tr>
+    <tr>
+      <td>Acres Peatland Scorecard</td>
+      <td>C5 damage due ti turbary activities</td>
+      <td>Low = 10; Moderate = -10; High = -30</td>
+      <td>Area affected (%)</td>
+      <td>UAV/LiDAR: ≤0.50m; Sentinel-2: 10m resolution suits regional/national-scale assessments but struggles with features ≤1.0m</td>
+      <td>UAV RGB, LiDAR (UAV/airborne), Sentinel-2</td>
+      <td>LiDAR: High (5/5); UAV: Moderate (4/5); Sentinel-2: Low (1/5)</td>
+      <td>Change detection, OBIA, ML</td>
+      <td>(NatureScot, 2025; NatureScot, 2022.; Bluesky International, 2024; Esri Canada, 2024; Furukawa, 2024)\n</td>
+      <td>High (UAV/LiDAR); Low (Sentinel-2)</td>
+      <td>High - High (LiDAR); Moderate (UAV RGB)</td>
+      <td>YES</td>
+      <td>Peat cutting/bare peat mappable; change detection effective. UAV/LiDAR optimal for field/plot scale; Sentinel-2 for regional/national.</td>
+    </tr>
+    <tr>
+      <td>Acres Peatland Scorecard</td>
+      <td>C6 cover of bracken</td>
+      <td>Low/none = 0; Moderate = -10; High = -20</td>
+      <td>% cover</td>
+      <td>field - UAV: 1 cm–1 m\nSentinel-2: 10–20 m</td>
+      <td>UAV Multispectral, Sentinel-2</td>
+      <td>82.6% overall accuracy; Long (2023) demonstrated that DEM-enhanced ML models significantly improve hag (eroded peat) identification, analogous to bracken detection</td>
+      <td>ML classification with terrain data</td>
+      <td>(NatureScot, 2025; Brown et al., 2024; Long, 2023; (Bradley et al., 2025; (Mitchell et al., 2025; (Hunter et al., 2025; (Burnham et al., 2024)</td>
+      <td>High for dense stands; moderate for sparse fronds</td>
+      <td>High - NatureScot (2025) confirms RS viability for erosion tracking, directly supporting bracken management</td>
+      <td>YES</td>
+      <td>Dense stands easily mapped; sparse fronds less so. UAV ideal for field-level; Sentinel-2 scalable to regional/national tiers; Dense bracken stands are mapped reliably, but sparse cover reduces detectability due to spectral similarity to other vegetation 2) Multi-sensor fusion (e.g., SAR + optical) mitigates this in cloud-prone regions but requires validation</td>
+    </tr>
+    <tr>
+      <td>Acres Peatland Scorecard</td>
+      <td>C7 extent of spreading immature scrub</td>
+      <td>Low = 10; Moderate = 0; High = -10</td>
+      <td>% cover</td>
+      <td>Field/farm level; regional/national - UAV RGB: ~0.05–0.2 m; WorldView-3: ~0.3 m; Sentinel-2: 10 m</td>
+      <td>\tUAV RGB, Sentinel-2, WorldView-3</td>
+      <td>Moderate to high [(overall accuracy 75–95%, kappa 0.7–0.9)]- overall classification accuracies between 75% and 95%, with kappa statistics ranging from 0.7 to 0.9 for mapping vegetation types and surface degradation in peatlands using OBIA and machine learning (Random Forest, SVM)</td>
+      <td>OBIA, ML (Random Forest, SVM) - Object-Based Image Analysis (OBIA) and machine learning classifiers (Random Forest, SVM) are the state-of-the-art for automated scrub and vegetation mapping in peatlands</td>
+      <td>(IUCN UK Peatland Programme, 2024); (NatureScot, 2025); (Wang et al., 2024); (Miettinen et al., 2024); (Huang et al., 2024)</td>
+      <td>Large patches detectable; small seedlings not reliably mapped</td>
+      <td>Moderate to high for surface peat degradation and distinguishing degraded/intact areas; field validation recommended</td>
+      <td>PARTIAL - Accuracy varies by sensor, method, and patch size: larger scrub patches are mapped more reliably than isolated seedlings</td>
+      <td>RS is appropriate at field, regional, and national scale; best results with multi-sensor fusion and ML; small scrub patches may require UAV or very high-res satellite</td>
+    </tr>
+  </tbody>
+</table></div><div class='card-box'><h2>4. Grassland on Peat Soil</h2><table border="1" class="dataframe display nowrap">
+  <thead>
+    <tr style="text-align: right;">
+      <th>Score Card</th>
+      <th>ACRES Action</th>
+      <th>Score Value</th>
+      <th>Score Unit</th>
+      <th>Resolution (RS platform, scale)</th>
+      <th>RS Technology</th>
+      <th>Accuracy</th>
+      <th>Method</th>
+      <th>Reference</th>
+      <th>Detectability</th>
+      <th>Accuraccy</th>
+      <th>RS is appropriate</th>
+      <th>Comments/Notes (RS Integration)</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>ACRES Grassland on Peat Soil</td>
+      <td>A1 Number of positive indicators</td>
+      <td>0-4=0, 5-8=10, 9-12=20, 13+=25</td>
+      <td>Count (species)</td>
+      <td>Plant species level (&lt;1m, UAV RGB/HSI)</td>
+      <td>UAV (drone) RGB, Multispectral</td>
+      <td>OA = 86.2% for 22 grassland species (UAV RGB + CNN; Dyrmann et al., 2016); R² = 0.72 for bloom coverage using EBI (UAV MS, Chen et al., 2019)</td>
+      <td>Deep CNN, OBIA, Enhanced Bloom Index (EBI), species-level ML classification</td>
+      <td>(Dyrmann et al., 2016); (Chen et al., 2019)</td>
+      <td>&lt;1m</td>
+      <td>High</td>
+      <td>PARTIAL</td>
+      <td>Feasibility: UAVs + AI can map dominant/flowering indicator species in open swards with high accuracy. Challenges: Small, cryptic, or non-flowering herbs remain hard to detect; seasonality and spectral similarity can reduce accuracy. Solution: Use RS for dominant species and supplement with targeted field surveys for full indicator count. EBI improves flower signal extraction in UAV and satellite data.</td>
+    </tr>
+    <tr>
+      <td>ACRES Grassland on Peat Soil</td>
+      <td>A2 Cover of all positive indicators</td>
+      <td>Low=0, Moderate=10, High=20, Very high=25</td>
+      <td>% cover</td>
+      <td>Field scale (10m, Sentinel-2; &lt;1m, UAV)</td>
+      <td>Sentinel-2, UAV Multispectral</td>
+      <td>OA = 89.8% for grassland cover (Sentinel-2 + Random Forest, Maxwell et al., 2018); R² = 0.88, RMSE = 7.3% (Sentinel-2 + RF, Immitzer et al., 2012)</td>
+      <td>Spectral unmixing, Random Forest, OBIA</td>
+      <td>(Maxwell et al., 2018; Immitzer et al., 2012)</td>
+      <td>10m&lt;1m</td>
+      <td>High</td>
+      <td>YES</td>
+      <td>Feasibility: Sentinel-2 and UAV multispectral data enable rapid, repeatable % cover estimation for dominant species/groups at field and farm scales. Challenges: Fine-scale species composition and rare species are not reliably mapped at 10m; UAVs are needed for sub-meter mapping but are less scalable. Solution: Use Sentinel-2 for broad monitoring and UAVs for detailed mapping/calibration; combine with field data for full indicator scoring.</td>
+    </tr>
+    <tr>
+      <td>ACRES Grassland on Peat Soil</td>
+      <td>A3 Combined cover of negative indicators/weeds</td>
+      <td>High=-20, Moderate=-10, Low&lt;5%=0</td>
+      <td>% cover</td>
+      <td>Field scale (10m, Sentinel-2; &lt;1m, UAV)</td>
+      <td>UAV RGB, Sentinel-2</td>
+      <td>Overall accuracy = OBIA with VGGNet-based FCN – 95% accuracy</td>
+      <td>OBIA, Deep Learning</td>
+      <td>(Mohidem et al., 2021,</td>
+      <td>10m -,&lt;1m</td>
+      <td>High</td>
+      <td>YES</td>
+      <td>Dense weed patches (e.g., docks, thistles) are mapped reliably. RS can prioritize fields for ground checks.</td>
+    </tr>
+    <tr>
+      <td>ACRES Grassland on Peat Soil</td>
+      <td>A4(a) Vegetation structure (primarily grazed)</td>
+      <td>Over-grazed=-10, Moderate=10/15, Under-grazed=-10, Good=25</td>
+      <td>Qualitative (score)</td>
+      <td>Field scale (&lt;1m, UAV LiDAR; 10m, SAR)</td>
+      <td>UAV LiDAR, Sentinel-1 SAR</td>
+      <td>R² = 0.89, RMSE = 0.08 m for sward height (UAV LiDAR); Ray tracing on voxel grid with drone lidar – 98.1% sampling completeness; Combined UAV-based multispectral VIs, crop height, and solar radiation with multiple linear regression and quantile regression- Best model R² = 0.75, RMSE = 0.53</td>
+      <td>LiDAR canopy height, SAR backscatter</td>
+      <td>(Zhang et al., 2024); (Khodjaev et al., 2024)</td>
+      <td>0.5-meter (50 cm) voxel size (volumetric pixel)</td>
+      <td>High</td>
+      <td>YES</td>
+      <td>RS (LiDAR/SAR) directly quantifies sward height and heterogeneity, enabling objective, repeatable structure scoring at scale.</td>
+    </tr>
+    <tr>
+      <td>ACRES Grassland on Peat Soil</td>
+      <td>A4(b) Vegetation structure (cut for hay/silage)</td>
+      <td>As A4(a)</td>
+      <td>Qualitative (score)</td>
+      <td>Field scale (&lt;1m, UAV LiDAR; 10m, SAR); 20 mm/pixel (30 m flight) and 35 mm/pixel (50 m flight)</td>
+      <td>UAV LiDAR, Sentinel-1 SAR</td>
+      <td>Accuracy (R²): 0.31–0.68 (Lee et al., 2024)</td>
+      <td>Multispectral UAV imaging + Vegetation Indices (VIs) &amp; texture features + Multivariate regression</td>
+      <td>(Lee et al., 2024)</td>
+      <td>&lt;1m</td>
+      <td>High</td>
+      <td>YES</td>
+      <td>RS captures mowing/cutting patterns and regrowth. Time-series SAR and LiDAR enable monitoring of structure change post-cut.</td>
+    </tr>
+    <tr>
+      <td>ACRES Grassland on Peat Soil</td>
+      <td>A5 Marsh Fritillary suitability</td>
+      <td>Yes/No</td>
+      <td>Suitability (qual.)</td>
+      <td>Plant/patch (&lt;1m, UAV RGB)</td>
+      <td>UAV RGB, Multispectral</td>
+      <td>F1-score = 0.52–0.98 for plant species (see Conciatori et al., 2024; Dyrmann et al., 2016)</td>
+      <td>OBIA, CNN, ML species detection</td>
+      <td>(Conciatori et al., 2024; Dyrmann et al., 2016)</td>
+      <td>&lt;1m</td>
+      <td>Low</td>
+      <td>NO</td>
+      <td>RS can detect large stands of Devil's-bit Scabious, but not small/isolated plants; field survey essential for suitability scoring. Use UAVs during peak flowering, apply OBIA &amp; deep learning for patch mapping; field validation essential for rare/isolated plants.</td>
+    </tr>
+    <tr>
+      <td>ACRES Grassland on Peat Soil</td>
+      <td>A6 Field boundary quality (worst 30m)</td>
+      <td>Poor=0, Moderate=5, Good=10</td>
+      <td>Qualitative</td>
+      <td>Boundary/patch (&lt;1m, UAV RGB/LiDAR; 10m, Sentinel-2)</td>
+      <td>Sentinel-2, UAV RGB, UAV LiDAR</td>
+      <td>OA = 91.2% for hedgerow detection (Sentinel-2 + OBIA)</td>
+      <td>OBIA, edge detection, CNN</td>
+      <td>Betbeder et al., (2014)</td>
+      <td>&lt;1m</td>
+      <td>High</td>
+      <td>PARTIAL</td>
+      <td>Large hedgerows, walls, and fences are detectable by drone or high-res satellite. Gaps/species composition need field inspection.</td>
+    </tr>
+    <tr>
+      <td>ACRES Grassland on Peat Soil</td>
+      <td>B1 Evidence of damaging activities</td>
+      <td>None=0, Low=-10, Moderate=-20, High=-30</td>
+      <td>% area</td>
+      <td>Field/farm (10m, Sentinel-2; &lt;1m, UAV); Medium-resolution satellite imagery: IRS (23 m); High-resolution satellite imagery: GeoEye-1 (1–4 m), Ikonos;</td>
+      <td>OBIA with GeoEye-1 imagery; OBIA with medium/high-res satellite imagery, disturbance cube</td>
+      <td>Kappa = 0.91, OA = 93.5% for peatland disturbance (Sentinel-2 + RF)</td>
+      <td>OA 94%, Kappa 0.66, CCQ 85/85/71%; 62–90% (higher with high-res)</td>
+      <td>(Connolly &amp; Holden, 2017; (Connolly &amp; Holden, 2013)</td>
+      <td>10m -&lt;1m</td>
+      <td>High</td>
+      <td>YES</td>
+      <td>RS detects large-scale peat extraction, burning, or dumping. Automated change detection can trigger field checks for subtle damage. Use UAV or ground surveys for areas flagged as moderate/high risk; Remote sensing techniques with passive and active sensors at regional to national scale can help in monitoring subsidence rate, water table, peat moisture, landslides, and GHG emissions... Long-term monitoring is necessary to draw valid conclusions on revegetation.</td>
+    </tr>
+    <tr>
+      <td>ACRES Grassland on Peat Soil</td>
+      <td>B2 Level of risk to water bodies</td>
+      <td>None=0, Low=-5, Moderate=-15, High=-25</td>
+      <td>Risk (qualitative)</td>
+      <td>Field/farm (10m, Sentinel-2; &lt;1m, UAV),</td>
+      <td>Sentinel-2, UAV RGB, LiDAR, SAR,OA up to 0.95 (RF, SAR+Sentinel-2);</td>
+      <td>OA up to 0.95 (RF, SAR+Sentinel-2); OA up to 99.95% (RF, Landsat+DEM); R² = 0.82 for precipitation-driven peatland change</td>
+      <td>NDWI, proximity analysis, LiDAR slope;  TWI, RF, GAM</td>
+      <td>(Sahour et al., 2021; Abdelmajeed &amp; Juszczak, 2024; Lozano Rodríguez et al., 2025)</td>
+      <td>10m -&lt;1m</td>
+      <td>High</td>
+      <td>YES</td>
+      <td>Remote sensing integrates Sentinel-2 multispectral, UAV RGB, LiDAR elevation data, and SAR to map water presence, wetness, and topographic risk factors. NDWI and TWI indices combined with LiDAR slope identify high-risk zones for water contamination and runoff. Machine learning models (RF, GAM) improve accuracy, with OA up to 0.95 and 99.95% reported for water risk mapping. Multi-source fusion enables scalable, automated detection, supporting targeted field validation and management of peatland water risks.</td>
+    </tr>
+    <tr>
+      <td>ACRES Grassland on Peat Soil</td>
+      <td>B3 Extent of bare soil &amp; erosion</td>
+      <td>None=0, Low=-5, Moderate=-10, High=-20</td>
+      <td>% cover</td>
+      <td>Field/farm (10m, Sentinel-2; &lt;1m, UAV; 0.3m, WorldView-3)</td>
+      <td>Sentinel-2, WorldView-3, UAV</td>
+      <td>OA = 93.76% (pixel-based SVM, WorldView-3 + UAV, Islam et al., 2023); OA &gt; 85% for all</td>
+      <td>Pixel-based SVM, Object-based Naïve Bayes, k-NN, ML, OBIA, Bare Soil Index</td>
+      <td>(IUCN UK Peatland Programme, 2022; Connolly &amp; Holden, 2017; Saha et al., 2022; (Bonnett et al., 2009)</td>
+      <td>0.3m  -10m</td>
+      <td>High</td>
+      <td>YES</td>
+      <td>Integrating UAV and WorldView-3 enables highly accurate, repeatable mapping of bare soil and erosion features. Pixel-based SVM and object-based NB classifiers both achieve &gt;93% OA. High-res UAV/WorldView-3 resolves small patches; field validation further enhances reliability for restoration and regulatory reporting.</td>
+    </tr>
+    <tr>
+      <td>ACRES Grassland on Peat Soil</td>
+      <td>B4 Cover of non-native invasive species</td>
+      <td>None=0, Low=-5, Moderate=-10, High=-20</td>
+      <td>% cover</td>
+      <td>Field/patch (10m, Sentinel-2; &lt;1m, UAV; 0.3m, WorldView-3)</td>
+      <td>UAV RGB, WorldView-3, Sentinel-2</td>
+      <td>F1-score = 0.52–0.98 for plant species (see Conciatori et al., 2024; Dyrmann et., 2016)</td>
+      <td>OBIA, CNN, multi-temporal flowering mapping</td>
+      <td>(Huelsman, Epstein, &amp; Yang, 2022;Rakotoarivony et al., 2023; Fei et al. 2024)</td>
+      <td>0.3 -&lt;1m</td>
+      <td>Medium</td>
+      <td>Partial</td>
+      <td>RS detects large monocultures (e.g., Rhododendron); scattered individuals require field survey. Imaging spectroscopy and deep learning (CNN, RF, SVM) enable highly accurate detection of dominant invasive species in grasslands (OA = 95%, Huelsman et al., 2022; OA = 82%, Rakotoarivony et al., 2023; OA &gt; 95%, Fei et al., 2024). Field validation may be needed for scattered/small individuals.</td>
+    </tr>
+    <tr>
+      <td>ACRES Grassland on Peat Soil</td>
+      <td>B5 Extent of spreading immature scrub</td>
+      <td>None=10, Low=0, Moderate=-10, High=-20</td>
+      <td>% cover</td>
+      <td>UAV hyperspectral, WorldView-3, PlanetScope, Sentinel-2</td>
+      <td>UAV hyperspectral, WorldView-3, PlanetScope, Sentinel-2</td>
+      <td>OA = 95% for Elaeagnus umbellata using UAV hyperspectral + ML (Huelsman et al., 2022); OA = 82% for Lespedeza cuneata using PlanetScope + ML (Rakotoarivony et al., 2023); OA &gt; 95% for INWS in alpine grasslands using UAV hyperspectral + CNN (Fei et al., 2024)</td>
+      <td>Hyperspectral imaging, ML (Random Forest, SVM), Deep Learning (CNN), OBIA</td>
+      <td>(Madsen et al., 2020a; (Madsen et al., 2020; YellowScan, 2020; Madsen et al., 2023)</td>
+      <td>10m&lt;1m</td>
+      <td>High</td>
+      <td>YES</td>
+      <td>UAS LiDAR (e.g., YellowScan Surveyor) provides standardized, repeatable, and high-precision mapping of immature scrub encroachment and biomass change. 3D point cloud analysis distinguishes shrub genera and quantifies cover and volume. Annual or seasonal LiDAR surveys can automate scrub scoring and monitor management effectiveness. Field validation is recommended for seedlings and very low-stature regrowth. (Madsen et al., 2020; YellowScan, 2020)</td>
+    </tr>
+    <tr>
+      <td>ACRES Grassland on Peat Soil</td>
+      <td>B6 Cover of bracken</td>
+      <td>Low/none=0, Moderate=-10, High=-20</td>
+      <td>% cover</td>
+      <td>Field/patch (10m, Sentinel-2; &lt;1m, UAV)</td>
+      <td>UAV multispectral (e.g., MicaSense RedEdge MX), Sentinel-2 MSI (10m), UAV RGB</td>
+      <td>UAV multispectral: RMSE &lt;0.5 gCO₂·m⁻²·h⁻¹ for CO₂ flux mapping (Walcker et al., 2023); Sentinel-2: ML overall accuracy up to 99.1% for vegetation classification (Molnár et al., 2024), 98.88% for CNN-based classification (Yilmaz et al., 2024); ML and DL methods (RF, SVM) are most effective for IAP detection (Rakgoale &amp; Ngetar, 2024)</td>
+      <td>OBIA, NDVI, supervised classification</td>
+      <td>Walcker et al. 2023; Rakgoale &amp; Ngetar 2024; Molnár et al. 2024; Yilmaz et al. 2024</td>
+      <td>10m&lt;1m</td>
+      <td>High</td>
+      <td>YES</td>
+      <td>High-res UAV mapping enables fine-scale detection; Sentinel-2 with ML/DL is highly accurate for vegetation and IAP detection; dense stands are reliably mapped, sparse/shaded areas may be underestimated.</td>
+    </tr>
+  </tbody>
+</table></div><div class='card-box'><h2>5. Winterage Scorecard </h2><table border="1" class="dataframe display nowrap">
+  <thead>
+    <tr style="text-align: right;">
+      <th>Score Card</th>
+      <th>ACRES Action</th>
+      <th>Score Value</th>
+      <th>Score Unit</th>
+      <th>Resolution</th>
+      <th>RS Technology</th>
+      <th>Accuracy</th>
+      <th>Method</th>
+      <th>Reference</th>
+      <th>Detectability</th>
+      <th>Accuraccy -</th>
+      <th>RS is appropriate</th>
+      <th>Comments</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Acres Winterage Scorecard</td>
+      <td>A1 Grazing level</td>
+      <td>Overgrazed = -10, Moderate = 10, Undergrazed = -10, Good = 25</td>
+      <td>Structure (qualitative)</td>
+      <td>Field</td>
+      <td>UAV (drone), LiDAR, Sentinel-1 SAR</td>
+      <td>OA of 94 %(Gholizadeh et al., 2022); Wallace et al. (2012): R² = 0.92 (LiDAR canopy height vs. field)</td>
+      <td>LiDAR canopy height, SAR backscatter, NDVI, OBIA; [Airborne imaging spectroscopy (hyperspectral, 1 m resolution); classification using key vegetation functional traits (e.g., carotenoids, chlorophyll, N, canopy height, K, Mg) (Gholizadeh et al., 2022)]</td>
+      <td>(Gholizadeh et al., 2022)</td>
+      <td>&lt;1m (UAV/LiDAR), 10m (SAR)</td>
+      <td>High</td>
+      <td>YES</td>
+      <td>Sward structure and grazing impact can be mapped with drone/LiDAR/SAR.</td>
+    </tr>
+    <tr>
+      <td>Acres Winterage Scorecard</td>
+      <td>A2 Litter level</td>
+      <td>None = 10, Low = 5, Moderate = 0, High = -10</td>
+      <td>Litter cover (%)</td>
+      <td>Field</td>
+      <td>UAV (drone), High-res RGB</td>
+      <td>Deep learning with UAVs shows promising results (Osco et al., 2021),OBIA, texture analysis,</td>
+      <td>OBIA, texture analysis, CNN</td>
+      <td>(Osco et al., 2021)</td>
+      <td>&lt;1m &lt;1m (UAV, RGB/multispectral)\t</td>
+      <td>Med</td>
+      <td>PARTIAL</td>
+      <td>Dense litter patches are detectable by drone; thin or patchy litter is best assessed in the field. Deep learning (CNNs) and OBIA are promising for image analysis, but nothing has been applied on specific litter mapping.</td>
+    </tr>
+    <tr>
+      <td>NaN</td>
+      <td>A3a damage at feed sites and/or water troughs</td>
+      <td>None = 10, Low = 0, Moderate = -10, High = -20</td>
+      <td>Area affected (%)</td>
+      <td>Field</td>
+      <td>UAV (drone), Sentinel-2</td>
+      <td>Overall Accuracy: Eurasia test site: 82.4%; South America test site: 88.3% (Radoux et al., 2014) SVM: 88.6% (Landsat), 87.9% (QuickBird) (Maxwell et al., 2018)\nRF: 88.2% (Landsat), 87.4% (QuickBird)\nBoosted DT: 87.9% (Landsat), 87.1% (QuickBird)\nANN: 87.2% (Landsat), 86.4% (QuickBird)\nk-NN: 86.0% (Landsat), 83.8% (QuickBird)\nSingle DT: 80.8% (Landsat), 78.7% (QuickBird)</td>
+      <td>Change detection, OBIA, ML; Automated Training Sample Extraction and  Random Forests (RF) classification on MERIS imagery with automated training sample extraction (spatial and spectral filtering)</td>
+      <td>(Radoux et al., 2016; Maxwell et al., 2018)</td>
+      <td>&lt;1m (UAV), 10m (Sentinel-2)</td>
+      <td>Med</td>
+      <td>PARTIAL</td>
+      <td>Large, bare/damaged patches at feed sites detectable; small-scale trampling needs field survey.</td>
+    </tr>
+    <tr>
+      <td>NaN</td>
+      <td>A3b round bales of silage been fed in the field?</td>
+      <td>Yes/No</td>
+      <td>Presence/Absence</td>
+      <td>Field</td>
+      <td>UAV (drone), High-res RGB</td>
+      <td>[FR-Transformer: AP50 = 88.3%, AP75 = 38.5%]Transformer-based object detection networks: FR-Transformer (two-stage),R-Transformer (one-stage),Y-Transformer (one-stage) -Compared with conventional CNN-based object detection methods. - FR-Transformer outperformed other CNN-based methods in wheat head detection from UAV images.</td>
+      <td>Object detection, CNN; UAV RGB imagery; Transformer-based deep learning (FR-Transformer, R-Transformer, Y-Transformer) for wheat head detection</td>
+      <td>(Zhu et al., 2022)\n</td>
+      <td>&lt;1m</td>
+      <td>High</td>
+      <td>PARTIAL</td>
+      <td>Large bales visible in drone imagery; field survey for smaller bales or if obscured.</td>
+    </tr>
+    <tr>
+      <td>NaN</td>
+      <td>A4 damage at natural water sources?</td>
+      <td>None = 10, Low = 0, Moderate = -10, High = -20</td>
+      <td>Area affected (%), Chlorophyll concentration -(μg/L)</td>
+      <td>Field - &lt;1m (UAV), 10m (Sentinel-2)</td>
+      <td>UAV (drone), 30m (EnMAP), 10m (Sentinel-2)</td>
+      <td>Maxwell et al. (2018): OA 92.6%, Kappa 0.89; McFeeters (1996): NDWI water mapping accuracy typically &gt;85% - [1D CNN outperformed other models for Chl-a estimation; simulation data enables robust model training -1D CNN on SR-EnMAP: R²=81.9%, RMSE=12.4 μg/L; SR-Sentinel: R²=62.4%]</td>
+      <td>Change detection, OBIA, NDWI; WASI-simulated and real-world spectral data; spectral downsampling to EnMAP/Sentinel-2; 1D CNN, Random Forest, ANN, band-ratio models (Maier, Keller, &amp; Hinz, 2021)</td>
+      <td>(McFeeters, 1996; Maxwell et al., 2018)</td>
+      <td>&lt;1m (UAV), 10m (Sentinel-2)</td>
+      <td>Med</td>
+      <td>PARTIAL</td>
+      <td>Large-scale bare/eroded patches at water sources detectable; fine-scale impacts need field input.</td>
+    </tr>
+    <tr>
+      <td>NaN</td>
+      <td>A5 Extent of baresoil and erosion</td>
+      <td>None = 10, Low = 0, Moderate = -10, High = -20</td>
+      <td>% cover of field</td>
+      <td>Field -&lt;1m (UAV), 10m (Sentinel-2)</td>
+      <td>UAV (drone), Sentinel-2, WorldView-3</td>
+      <td>Modified Normalized Difference Bare Soil Index (MNDBSI) using Sentinel-2 imagery, reporting a bare soil mapping overall accuracy of 97.7% for MNDBSI, compared to 86.1% for BSI and 85.7% for DBSI, demonstrating the effectiveness of spectral indices and Sentinel-2 data for precise bare soil delineation</td>
+      <td>Modified Normalized Difference Bare Soil Index (MNDBSI)</td>
+      <td>(Somanathan et al., 2024)</td>
+      <td>&lt;1m (UAV), 10m (Sentinel-2)</td>
+      <td>High</td>
+      <td>YES</td>
+      <td>Bare soil/erosion patches can be mapped accurately, even with moderate-resolution RS.</td>
+    </tr>
+    <tr>
+      <td>NaN</td>
+      <td>B1 Extent of spread of immature scrub</td>
+      <td>None = 10, Low = 0, Moderate = -10, High = -20</td>
+      <td>% cover of field</td>
+      <td>Field/farm level -&lt;1m (UAV), 10m (Sentinel-2)</td>
+      <td>UAV (drone), Sentinel-2</td>
+      <td>RGB imagery from ATV; fully convolutional neural network (FCN) for weed detection under heavy leaf occlusion (Dyrmann et al., 2017)\nDyrmann et al. (2016): Precision 0.91, Recall 0.87</td>
+      <td>OBIA, NDVI, Random Forest - RGB color images were collected from grazing fields using a camera mounted on an all-terrain vehicle (ATV). -</td>
+      <td>(Dyrmann et al., 2017)\n</td>
+      <td>&lt;1m (UAV), 10m (Sentinel-2)</td>
+      <td>Med</td>
+      <td>PARTIAL</td>
+      <td>Large scrub patches detectable; small seedlings not reliably mapped.</td>
+    </tr>
+    <tr>
+      <td>NaN</td>
+      <td>B3 Impact or threat from Molinia</td>
+      <td>None = 10, Low = 0, Moderate = -10, High = -20</td>
+      <td>% cover of field</td>
+      <td>Field-&lt;1m (UAV), 10m (Sentinel-2)</td>
+      <td>UAV (drone), Sentinel-2</td>
+      <td>Review of ML methods: Random Forest (RF), Support Vector Machines (SVM), Artificial Neural Networks (ANN), and others, with RF and ANN frequently achieving the highest accuracies in the reviewed literature.</td>
+      <td>OBIA, NDVI, ML, spectral unmixing</td>
+      <td>(Maxwell et al., 2018; Immitzer et al., 2012; Burnham et al., 2024)</td>
+      <td>&lt;1m (UAV), 10m (Sentinel-2)</td>
+      <td>Med</td>
+      <td>PARTIAL</td>
+      <td>Dense Molinia stands can be mapped; scattered plants require field survey.</td>
+    </tr>
+    <tr>
+      <td>NaN</td>
+      <td>B4 cover of weed species present due to management practices?</td>
+      <td>None = 10, Low = 0, Moderate = -10, High = -20</td>
+      <td>% cover of field</td>
+      <td>Field</td>
+      <td>UAV (drone), Sentinel-2</td>
+      <td>Peña et al. (2013): OA 94.7% (UAV, OBIA); Kamilaris &amp; Prenafeta-Boldú (2018): Deep learning OA 93–98% (reviewed) - UAV RGB and colour-infrared (CIR) imagery; object-based image analysis (OBIA) for weed seedling detection OA up to 91%</td>
+      <td>OBIA, ML, supervised classification - UAV RGB and colour-infrared (CIR) imagery; object-based image analysis (OBIA) for weed seedling detection</td>
+      <td>Peña et al. (2013); Kamilaris &amp; Prenafeta-Boldú (2018)</td>
+      <td>&lt;1m (UAV), 10m (Sentinel-2)</td>
+      <td>Med</td>
+      <td>PARTIAL</td>
+      <td>Large/dense weed patches detectable; scattered weeds require field survey.</td>
+    </tr>
+    <tr>
+      <td>NaN</td>
+      <td>B5 Cover of non-native species</td>
+      <td>None = 10, Low = 0, Moderate = -10, High = -20</td>
+      <td>% cover of field</td>
+      <td>Field - &lt;1m (UAV), 10m (Sentinel-2)</td>
+      <td>UAV (drone), Sentinel-2</td>
+      <td>Riparian forest species accuracy: 79.5% (Site 1), 84.1% (Site 2); Health condition: 90.6% (Site 1) [Michez et al., 2016]; Peatland vegetation models: plant community clusters (PCCs) R²=42.6–48.0%, PFT cover R²=53.9–69.8%, above-ground biomass (AGB) R²=43.1–61.5%, leaf area index (LAI) R²=46.3–51.3% [Pang et al., 2022]</td>
+      <td>UAS/UAV multi-temporal RGB imagery; OBIA at ~1 m²; Random Forests classification; spectral and structural variables; 2.  {Multi-temporal field spectroscopy (handheld spectroradiometer); random forest regression for PCC, cover, AGB, and LAI}</td>
+      <td>(Michez et al., 2016; (Pang, Räsänen, Lindholm, Aurela, &amp; Tuittila, 2022)\n</td>
+      <td>&lt;1m (UAV), 10m (Sentinel-2)</td>
+      <td>Med</td>
+      <td>PARTIAL</td>
+      <td>Large/dense stands detectable; scattered individuals not reliably mapped.</td>
+    </tr>
+    <tr>
+      <td>NaN</td>
+      <td>C1 Field retainment of typical plant communities present</td>
+      <td>High = 10, Moderate = 0, Low = -10</td>
+      <td>Quality (qualitative)</td>
+      <td>Field &lt;1m</td>
+      <td>UAV (drone),  RGB imagery - camera mounted on an all-terrain vehicle (ATV)</td>
+      <td>Lü et al. (2021): F1-score 0.89; mean average precision (mAP) of 0.74 (74%) for weed detection under heavy leaf occlusion Dyrmann et al., 2016</td>
+      <td>Fully Convolutional Neural Network (FCN) trained and validated on over 17,000 annotated weed instances, specifically designed to detect weeds even under heavy leaf occlusion.</td>
+      <td>Lü et al. (2021); Dyrmann et al., 2016)</td>
+      <td>&lt;1m</td>
+      <td>Low</td>
+      <td>PARTIAL</td>
+      <td>Only dominant/patch-forming species detectable; full community needs field survey.</td>
+    </tr>
+    <tr>
+      <td>Acres Winterage Scorecard</td>
+      <td>C2 Evidence of damaging activities to habitat, vegetation, or archaeology</td>
+      <td>None = 10, Low = 0, Moderate = -10, High = -20</td>
+      <td>Area affected (%)</td>
+      <td>Patch/Field: &lt;1m (UAV), 10m (Sentinel-2); Regional/National: 10–30m (Sentinel-2, Landsat), 3–5m (PlanetScope)</td>
+      <td>UAV (drone), Sentinel-2</td>
+      <td>UAV: OA 88.2% (Radoux et al., 2016); Sentinel-2: OA 91.2% (Burnham et al., 2024); Landsat: OA 85–90% (various studies); Sentinel-2: OA 80–92% (Mücher &amp; Hazeu, 2021)</td>
+      <td>Change detection, OBIA, ML; Automated change detection algorithm using satellite imagery (NASA/ESA) on Google Earth Engine to detect wind turbines, oil/gas pads, and agricultural conversion. (Evans &amp; Li, 2017)</td>
+      <td>(Radoux et al., 2016; Burnham et al., 2024); (Evans &amp; Li, 2017); (Mücher &amp; Hazeu, 2021); (Schmidt &amp; Van der Sluis, 2021)</td>
+      <td>&lt;1m (UAV), 10m (Sentinel-2); Large-scale damage (burning, drainage, construction) readily detectable at patch, field, and regional scales. Subtle/small-scale damage (e.g., archaeological disturbance, light grazing) often requires field validation.</td>
+      <td>Med</td>
+      <td>PARTIAL</td>
+      <td>RS methods are highly effective for detecting abrupt, large-scale changes. Subtle or gradual damage may not be reliably detected without field input. Multi-temporal and multi-sensor approaches improve detectability, but spectral confusion (e.g., bare soil vs. archaeological disturbance) can reduce accuracy.\n\nLimitations: Cloud cover, temporal resolution, and technical skill gaps among end-users.\nImprovements: Integration of field data, training for site managers, and use of higher-res satellites.\nUser engagement and communication between RS specialists and terrain managers is critical (Mücher &amp; Hazeu, 2021)</td>
+    </tr>
+  </tbody>
+</table></div><div class='card-box'><h2>6. Rough Grazing Scorecard</h2><table border="1" class="dataframe display nowrap">
+  <thead>
+    <tr style="text-align: right;">
+      <th>Score Card</th>
+      <th>ACRES Action</th>
+      <th>Score Value</th>
+      <th>Score Unit</th>
+      <th>Resolution</th>
+      <th>RS Technology</th>
+      <th>Accuracy</th>
+      <th>Method</th>
+      <th>Reference</th>
+      <th>Detectability</th>
+      <th>Accuraccy -</th>
+      <th>RS is appropriate</th>
+      <th>Comments</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Rough grazing SCORECARD</td>
+      <td>A1 positive indicators</td>
+      <td>Low: 0-4 = 0; Moderate: 5-8 = 10; High: 9+ = 20</td>
+      <td>Individual plant species</td>
+      <td>&lt;1m (plant scale)</td>
+      <td>UAV (drone), High-res RGB, Multispectral</td>
+      <td>Classification accuracy of 86.2% for 22 plant species (Dyrmann et al., 2016)</td>
+      <td>OBIA, Deep CNN, AI/ML object detection (species-level if dominant)</td>
+      <td>Dyrmann et al., 2016; Sun et al., 2017</td>
+      <td>&lt;1m</td>
+      <td>Low</td>
+      <td>PARTIAL</td>
+      <td>Most positive indicator plants are too small or seasonal for RS; only dominant or flowering species detectable by drone. Field survey needed for full accuracy.</td>
+    </tr>
+    <tr>
+      <td>Rough grazing SCORECARD</td>
+      <td>A2 Cover of all positive indicators</td>
+      <td>Low = 0; Moderate = 5; High = 10</td>
+      <td>Patch/field level % cover</td>
+      <td>10m (Sentinel-2), &lt;1m (UAV)</td>
+      <td>Sentinel-2, UAV, Landsat 8, WorldView-3</td>
+      <td>SVM: 87.6% (Indian Pines), 90.4% (Landsat TM); RF: 87.0%, 89.8% (Maxwell et al., 2018; Immitzer et al., 2012)</td>
+      <td>NDVI, EVI, OBIA, Random Forest, SVM, supervised classification</td>
+      <td>Maxwell et al., 2018; Immitzer et al., 2012</td>
+      <td>10m, &lt;1m</td>
+      <td>Med</td>
+      <td>PARTIAL</td>
+      <td>Large patches of positive indicators detectable; fine-scale or scattered plants require field survey.</td>
+    </tr>
+    <tr>
+      <td>Rough grazing SCORECARD</td>
+      <td>A3 Combined Cover of negative indicator/weeds</td>
+      <td>Very High &gt;50%; High 26-50%; Moderate 5-25%; Low &lt;5%</td>
+      <td>Patch/field level % cover</td>
+      <td>10m (Sentinel-2), &lt;1m (UAV)</td>
+      <td>Sentinel-2, UAV, Landsat 8, WorldView-3</td>
+      <td>OBIA weed coverage map: 86% accuracy (Peña et al., 2013)</td>
+      <td>NDVI, EVI, OBIA, Random Forest, SVM, supervised classification</td>
+      <td>Puliti et al., 2020; Kamilaris &amp; Prenafeta-BoldÃº, 2018</td>
+      <td>10m, &lt;1m</td>
+      <td>Med</td>
+      <td>PARTIAL</td>
+      <td>Only dense/large patches of weeds are detectable; scattered weeds require field survey.</td>
+    </tr>
+    <tr>
+      <td>Rough grazing SCORECARD</td>
+      <td>A4 (a)Vegetation Structure in Grasslands primarilygrazed</td>
+      <td>Poor (all short/overgrazed or tall/rank/undergrazed) = -10; Suboptimal (patchy, little structure) = 10; Good (tall/medium/short, tussocks, some rush/sedge/grass areas) = 25; Very good (tall, medium, short, tussocks, varied) = 40</td>
+      <td>Entire field, sward structure</td>
+      <td>&lt;1m (UAV/LiDAR), 10m (SAR)</td>
+      <td>UAV (drone), LiDAR, Sentinel-1 SAR</td>
+      <td>LiDAR-derived canopy height RÂ² = 0.54, RMSE = 64.76 g/mÂ² (Zang et al., 2020); SAR RMSE 0.34m (Wallace et al., 2012)</td>
+      <td>LiDAR canopy height, 3D structure analysis, SAR backscatter, OBIA</td>
+      <td>Wallace et al., 2012; Zang et al., 2020</td>
+      <td>&lt;1m, 10m</td>
+      <td>High</td>
+      <td>YES</td>
+      <td>Sward height, patchiness, tussocks, and rushes can be assessed with drone/LiDAR/SAR. Fine compositional details need fieldwork.</td>
+    </tr>
+    <tr>
+      <td>Rough grazing SCORECARD</td>
+      <td>A4 (b) Vegetation structure in grasslands cut for Hay/silage</td>
+      <td>Poor (no field margins, uniform sward, no aftermath grazing) = -10; Moderate (narrow margins, low diversity, some aftermath grazing) = 10; Good (wide margins, good headlands, aftermath grazing, non-uniform sward) = 20</td>
+      <td>Field margin, sward structure</td>
+      <td>&lt;1m (UAV/LiDAR), 10m (SAR)</td>
+      <td>UAV (drone), LiDAR, Sentinel-1 SAR</td>
+      <td>ANFIS model RÂ² = 0.85, RMSE = 11.07 kg DM/ha/day (Ali et al., 2017); Biomass RÂ² up to 0.9 (Rahman &amp; Gamon, 2015)</td>
+      <td>LiDAR, margin detection, OBIA, structure analysis, ANFIS, ANN, MLR</td>
+      <td>Ali et al., 2017; Rahman &amp; Gamon, 2015; Reinermann et al., 2020</td>
+      <td>&lt;1m, 10m</td>
+      <td>High</td>
+      <td>YES</td>
+      <td>Margin width, sward uniformity, aftermath grazing, and mowing patterns can be mapped. Species diversity in margins needs field survey.</td>
+    </tr>
+    <tr>
+      <td>Rough grazing SCORECARD</td>
+      <td>A5 Marsh Fritillary Suitability</td>
+      <td>Yes = score based on suitability (0–10); No = 0</td>
+      <td>Field level, plant presence</td>
+      <td>&lt;1m</td>
+      <td>UAV (drone), High-res RGB</td>
+      <td>No published accuracy for Devil’s-bit Scabious detection. UAV RGB and CNN/OBIA methods can reach up to 86.2% accuracy for dominant species (Dyrmann et al., 2016), but detection of small, non-dominant indicator species like Devil’s-bit Scabious remains unreliable (Sun et al., 2017).</td>
+      <td>OBIA, CNN, AI/ML object detection for Devil’s-bit Scabious (if dominant)</td>
+      <td>Dyrmann et al., 2016; Vázquez-García et al., 2023:</td>
+      <td>&lt;1m</td>
+      <td>Low</td>
+      <td>NO</td>
+      <td>Devil’s-bit Scabious is too small and/or phenologically variable for reliable RS detection; field survey required.Recent reviews confirm that, while deep learning and hyperspectral approaches are promising for small species, reliable detection in mixed grassland remains unproven (Vázquez-García et al., 2023).</td>
+    </tr>
+    <tr>
+      <td>Rough grazing SCORECARD</td>
+      <td>A6 Field boundary quality (worst 30m)</td>
+      <td>Poor = 0; Moderate = 10; Good = 20</td>
+      <td>Worst 30m boundary segment (structure and composition)</td>
+      <td>&lt;1m (UAV/LiDAR), 0.3–0.5m (WorldView-3)</td>
+      <td>UAV (drone), High-res RGB, LiDAR, WorldView-3</td>
+      <td>UAV-LiDAR horizontal accuracy RMS 0.34m (Wallace et al., 2012); UAV-LiDAR RMSE for structure 0.61–0.34m; WorldView-3 OA for hedgerow mapping 91.4% (Puliti et al., 2020)</td>
+      <td>OBIA, edge detection, CNN, LiDAR for structure</td>
+      <td>Wallace et al., 2012; Puliti et al., 2020</td>
+      <td>&lt;1m (UAV/LiDAR), 0.3–0.5m (WV-3)</td>
+      <td>High</td>
+      <td>PARTIAL</td>
+      <td>Large hedgerows, stone walls, and fences are detectable by drone or high-res satellite. Quality issues (gaps, species, undercutting) need field inspection. For best results, combine RS with targeted field checks.</td>
+    </tr>
+    <tr>
+      <td>Rough grazing SCORECARD</td>
+      <td>A7 Scrub diversity and structure</td>
+      <td>Low: No scrub or isolated leggy gorse bushes = 0\nModerate: Single-species scrub (often Gorse) with diverse height and irregular edge, 1–2 woody species, base sparsely vegetated = 5\nHigh: Scrub with several woody species of varied heights, highly structurally diverse, some compact/inaccessible areas = 10</td>
+      <td>Patch/field level, woody plant structure</td>
+      <td>&lt;1m</td>
+      <td>UAV (drone), High-res RGB</td>
+      <td>Medium for large patches and structure (Getzin et al., 2012)</td>
+      <td>OBIA, CNN, object-based classification</td>
+      <td>Getzin et al., 2012</td>
+      <td>&lt;1m</td>
+      <td>Med</td>
+      <td>PARTIAL</td>
+      <td>Large patches and structural diversity detectable by drone. Fine-scale species diversity and isolated bushes require field survey.</td>
+    </tr>
+    <tr>
+      <td>Rough grazing SCORECARD</td>
+      <td>B1 Evidence of damaging activities</td>
+      <td>None = 0;Low = -100; Moderate = -20; High = -30</td>
+      <td>% of area impacted (field/farm)</td>
+      <td>10m (Sentinel-2), &lt;1m (UAV)</td>
+      <td>UAV (drone), Sentinel-2, Landsat 8</td>
+      <td>Not routinely reported; high for large-scale change (Radoux et al., 2016)</td>
+      <td>Change detection (multi-temporal), OBIA, AI/ML</td>
+      <td>Radoux et al., 2016</td>
+      <td>10m, &lt;1m</td>
+      <td>Med</td>
+      <td>PARTIAL</td>
+      <td>Large-scale damage (dumping, erosion) detectable by RS; subtle damage needs field validation.</td>
+    </tr>
+    <tr>
+      <td>Rough grazing SCORECARD</td>
+      <td>B2 Level of risk to water bodies</td>
+      <td>None = 0; Low = -5; Moderate = -15; High = -25</td>
+      <td>Field/farm level, risk mapping</td>
+      <td>10m (Sentinel-2), &lt;1m (UAV), 30m (Landsat 8)</td>
+      <td>Sentinel-2, UAV, Landsat 8, WorldView-3</td>
+      <td>Not routinely reported; moderate for proximity/risk (McFeeters, 1996)</td>
+      <td>Proximity analysis, NDWI, OBIA, supervised classification</td>
+      <td>McFeeters, 1996</td>
+      <td>10m, &lt;1m, 30m</td>
+      <td>Med</td>
+      <td>PARTIAL</td>
+      <td>Proximity to water bodies can be mapped; pollution risk requires field assessment.</td>
+    </tr>
+    <tr>
+      <td>Rough grazing SCORECARD</td>
+      <td>B3 Extent of bare soil &amp; erosion</td>
+      <td>Low = 10; Moderate = -10; High = -20</td>
+      <td>% cover of field/bare soil</td>
+      <td>10m (Sentinel-2), &lt;1m (UAV), 30m (Landsat 8)</td>
+      <td>Sentinel-2, UAV, Landsat 8, WorldView-3</td>
+      <td>High; BSI and NDVI highly effective (Lobell &amp; Asner, 2002)</td>
+      <td>Bare Soil Index (BSI), NDVI, OBIA, supervised classification</td>
+      <td>Lobell &amp; Asner, 2002</td>
+      <td>10m, &lt;1m, 30m</td>
+      <td>High</td>
+      <td>YES</td>
+      <td>Bare soil and erosion patches can be mapped with high accuracy even with moderate resolutions.</td>
+    </tr>
+    <tr>
+      <td>Rough grazing SCORECARD</td>
+      <td>B4 Cover of non-native invasive species</td>
+      <td>None = 0; Low = -10; Moderate = -20; High = -30</td>
+      <td>% cover of field</td>
+      <td>10m (Sentinel-2), &lt;1m (UAV)</td>
+      <td>UAV (drone), Sentinel-2, WorldView-3</td>
+      <td>Medium for large patches; low for scattered individuals (Michez et al., 2016)</td>
+      <td>OBIA, CNN, Random Forest, AI/ML object detection</td>
+      <td>Michez et al., 2016</td>
+      <td>10m, &lt;1m</td>
+      <td>Low-Med</td>
+      <td>PARTIAL</td>
+      <td>Large patches of invasive species (e.g., Japanese knotweed) detectable; scattered individuals not reliably mapped.</td>
+    </tr>
+    <tr>
+      <td>Rough grazing SCORECARD</td>
+      <td>B5 Extent of spreading immature scrub</td>
+      <td>Low = -5; Moderate = -10; High = -20</td>
+      <td>% cover of field</td>
+      <td>10m (Sentinel-2), &lt;1m (UAV)</td>
+      <td>UAV (drone), Sentinel-2, WorldView-3</td>
+      <td>Medium for large patches; low for seedlings (Getzin et al., 2012)</td>
+      <td>OBIA, NDVI, Random Forest, supervised classification</td>
+      <td>Getzin et al., 2012</td>
+      <td>10m, &lt;1m</td>
+      <td>Med</td>
+      <td>PARTIAL</td>
+      <td>Large patches of immature scrub or bramble detectable by drone; small seedlings not reliably mapped.</td>
+    </tr>
+    <tr>
+      <td>Rough grazing SCORECARD</td>
+      <td>B6 Cover of bracken</td>
+      <td>Low = 0; Moderate = -10; High = -20</td>
+      <td>% cover of field</td>
+      <td>10m (Sentinel-2), &lt;1m (UAV)</td>
+      <td>UAV (drone), Sentinel-2, WorldView-3</td>
+      <td>High for dense stands; lower for sparse/shaded (Holland &amp; Aplin, 2013; Matongera, 2016)</td>
+      <td>OBIA, NDVI, supervised classification</td>
+      <td>Holland &amp; Aplin, 2013; Matongera, 2016</td>
+      <td>10m, &lt;1m</td>
+      <td>High</td>
+      <td>YES</td>
+      <td>Dense stands easily mapped; sparse fronds or shaded areas may lower detection reliability.</td>
+    </tr>
+  </tbody>
+</table></div><div class='card-box'><h2>7. Corncrake Scorecard</h2><table border="1" class="dataframe display nowrap">
+  <thead>
+    <tr style="text-align: right;">
+      <th>Score Card</th>
+      <th>ACRES Action</th>
+      <th>Score Value</th>
+      <th>Score Unit</th>
+      <th>Resolution (RS platform, scale)</th>
+      <th>RS Technology</th>
+      <th>Accuracy Reported</th>
+      <th>Method</th>
+      <th>Reference</th>
+      <th>Detectability</th>
+      <th>Accuracy</th>
+      <th>RS is appropriate</th>
+      <th>Comments/Notes (RS Integration)</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>ACRES Corncrake Scorecard</td>
+      <td>A1 Number of positive indicators</td>
+      <td>0-4=0, 5-8=10, 9-12=20, 13+=25</td>
+      <td>Count (species)</td>
+      <td>Plant species level (&lt;1m, UAV RGB/HSI)</td>
+      <td>UAV RGB, Multispectral</td>
+      <td>OA = 89.5% for grassland species classification using UAV hyperspectral + 3D-CNN (Zhang et al., 2023)</td>
+      <td>Deep CNN, OBIA, Enhanced Bloom Index (EBI)</td>
+      <td>(Dyrmann et al., 2016; Chen et al., 2019)</td>
+      <td>&lt;1m</td>
+      <td>High</td>
+      <td>PARTIAL</td>
+      <td>Feasibility: HIGH for dominant flowering species. UAV hyperspectral + deep learning detects orchids, knapweeds, meadowsweet during peak bloom. Challenges: Small herbs (eyebrights, violets, tormentil) remain undetectable at &lt;1m resolution. Solutions: Use RS for dominant indicators (≥37 species) and supplement with targeted field surveys for small/cryptic species. Focus on June-August flowering periods for optimal spectral discrimination.</td>
+    </tr>
+    <tr>
+      <td>ACRES Corncrake Scorecard</td>
+      <td>A2 Cover of all positive indicators</td>
+      <td>Very low=0, Low=5, Moderate=10, High=20, Very high=25</td>
+      <td>% cover</td>
+      <td>Field scale (10m, Sentinel-2; &lt;1m, UAV)</td>
+      <td>Sentinel-2, UAV Multispectral</td>
+      <td>R² = 0.92, RMSE = 6.1% for grassland cover estimation using Sentinel-2 + RF (Ghazaryan et al., 2022)</td>
+      <td>Spectral unmixing, Random Forest, OBIA</td>
+      <td>(Maxwell et al., 2018; Immitzer et al., 2012)</td>
+      <td>10m-&lt;1m</td>
+      <td>High</td>
+      <td>YES</td>
+      <td>Feasibility: HIGH. Sentinel-2 enables rapid % cover mapping across field scales. EVI outperforms NDVI for grassland fractional vegetation cover. Challenges: Mixed pixels at 10m resolution underestimate rare species contributions. Solutions: Fuse UAV data for calibration with Sentinel-2; apply OBIA to improve rare species detection; use red-edge bands for enhanced discrimination.</td>
+    </tr>
+    <tr>
+      <td>ACRES Corncrake Scorecard</td>
+      <td>A3 Combined cover of negative indicators/weeds</td>
+      <td>High=-20, Moderate=-10, Low=0</td>
+      <td>% cover</td>
+      <td>Field scale (10m, Sentinel-2; &lt;1m, UAV)</td>
+      <td>UAV RGB, Sentinel-2</td>
+      <td>Superior classification for small features (3D models)</td>
+      <td>3D-VGG/3D-ResNet hyperspectral analysis</td>
+      <td>Zhang &amp; Du (2022)</td>
+      <td>10m-&lt;1m</td>
+      <td>High</td>
+      <td>YES</td>
+      <td>Feasibility: HIGH for dense patches. Recent advances in hyperspectral UAV systems combined with 3D-CNN architectures achieve superior accuracy for weed identification. Challenges: Scattered individual weeds and small patches remain difficult to detect. Solutions: Integrate hyperspectral sensors with deep learning models; use multi-temporal analysis during peak flowering periods; combine UAV data with ground-truth validation for training datasets.</td>
+    </tr>
+    <tr>
+      <td>ACRES Corncrake Scorecard</td>
+      <td>A4 Marsh Fritillary suitability assessment</td>
+      <td>Yes/No</td>
+      <td>Suitability (qual.)</td>
+      <td>Plant/patch (&lt;1m, UAV RGB)</td>
+      <td>UAV RGB, Multispectral</td>
+      <td>F1 = 0.52-0.98 (target species) (Conciatori et al., 2024; Dyrmann et al., 2016)</td>
+      <td>OBIA, CNN, ML species detection</td>
+      <td>(Conciatori et al., 2024; Dyrmann et al., 2016)</td>
+      <td>&lt;1m</td>
+      <td>Low</td>
+      <td>NO</td>
+      <td>Feasibility: LOW. RS can detect large Devil's-bit Scabious stands but struggles with small/isolated plants essential for Marsh Fritillary suitability assessment. Major Challenge: Species-specific habitat requirements cannot be fully captured through remote sensing alone. Solutions: Mandatory field surveys for definitive assessment; optimize UAV timing during peak flowering (June-August); develop species-specific spectral libraries; integrate habitat modeling with RS data.</td>
+    </tr>
+    <tr>
+      <td>ACRES Corncrake Scorecard</td>
+      <td>A5 Overall % cover of grasses</td>
+      <td>High&gt;75%=-5, Moderate 50-75%=0, Low&lt;50%=5</td>
+      <td>% cover</td>
+      <td>Field scale (10m, Sentinel-2; &lt;1m, UAV)</td>
+      <td>Sentinel-2, UAV Multispectral</td>
+      <td>R² = 0.88, RMSE = 7.3% (Maxwell et al., 2018; Immitzer et al., 2012); R² = 0.91 for grassland FVC using Sentinel-2 EVI (Andreatta et al., 2022)</td>
+      <td>Random Forest, NDVI, spectral unmixing</td>
+      <td>(Maxwell et al., 2018; Immitzer et al., 2012)</td>
+      <td>10m-&lt;1m</td>
+      <td>High</td>
+      <td>YES</td>
+      <td>Feasibility: HIGH. Grass cover mapping is highly successful across multiple scales. Recent studies confirm EVI outperforms NDVI for grassland fractional vegetation cover estimation. Challenges: Mixed pixels at coarse resolution may underestimate grass diversity. Solutions: Fuse multi-resolution data; apply fractional response models; use red-edge bands for improved grass species discrimination.</td>
+    </tr>
+    <tr>
+      <td>ACRES Corncrake Scorecard</td>
+      <td>A6 Combined cover of all large rushes</td>
+      <td>High=-5, Moderate=0, Low=5</td>
+      <td>% cover</td>
+      <td>Field scale (10m, Sentinel-2; &lt;1m, UAV)</td>
+      <td>UAV Multispectral, Sentinel-2</td>
+      <td>OA = 86-90% (large patches) (Peña et al., 2013); Enhanced accuracy using SAR for wetland vegetation mapping</td>
+      <td>OBIA, Random Forest, SVM</td>
+      <td>(Peña et al., 2013)</td>
+      <td>10m-&lt;1m</td>
+      <td>Medium</td>
+      <td>PARTIAL</td>
+      <td>Feasibility: MEDIUM. Large rush patches (Juncus spp.) are detectable in wet areas using optical-SAR fusion. Challenges: Scattered individuals and precise species identification remain problematic. Solutions: Integrate SAR data for wetness mapping; use multi-temporal analysis; combine with topographic wetness index; apply hierarchical classification approaches.</td>
+    </tr>
+    <tr>
+      <td>ACRES Corncrake Scorecard</td>
+      <td>B1 Sward density &amp; structure</td>
+      <td>-10 to +10</td>
+      <td>Qualitative score</td>
+      <td>Field scale (&lt;1m, UAV LiDAR; 10m, SAR)</td>
+      <td>UAV LiDAR, Sentinel-1 SAR</td>
+      <td>R² = 0.89, RMSE = 0.08m (height) (Zhang et al., 2024; Khodjaev et al., 2024); R² improved from 0.23 to 0.82 with scan angle correction (Xu et al., 2023)</td>
+      <td>LiDAR canopy height, SAR backscatter, 3D structure analysis</td>
+      <td>(Zhang et al., 2024; Khodjaev et al., 2024)</td>
+      <td>&lt;1m-10m</td>
+      <td>High</td>
+      <td>YES</td>
+      <td>Feasibility: HIGH. LiDAR/SAR quantify sward height, density, and heterogeneity objectively. Recent advances in scan angle correction significantly improve grassland height estimation accuracy. Challenges: Complex grassland structure causes height underestimation. Solutions: Apply scan angle corrections; use multi-return LiDAR analysis; integrate SAR temporal signatures; develop vegetation penetration models.</td>
+    </tr>
+    <tr>
+      <td>ACRES Corncrake Scorecard</td>
+      <td>B2 Percentage of field containing optimal vegetation height for corncrake (20-50cm)</td>
+      <td>Low&lt;25%=-10, Moderate 25-50%=0, High 50-75%=5, Very high&gt;75%=10</td>
+      <td>% cover</td>
+      <td>Field scale (&lt;1m, UAV LiDAR; 10m, SAR)</td>
+      <td>UAV LiDAR, Sentinel-1 SAR</td>
+      <td>High spatial precision for height mapping (Zhang et al., 2024); Significant improvement with correction methods (Xu et al., 2023)</td>
+      <td>LiDAR microtopography, SAR time-series</td>
+      <td>(Zhang et al., 2024)</td>
+      <td>&lt;1m-10m</td>
+      <td>High</td>
+      <td>YES</td>
+      <td>Feasibility: HIGH. Optimal corncrake height bands (20-50cm) are precisely mapped using corrected LiDAR data. Challenges: Vegetation density affects penetration and height accuracy. Solutions: Apply height correction based on scan angle; use segmented height range modeling; integrate multi-temporal SAR for vegetation structure dynamics.</td>
+    </tr>
+    <tr>
+      <td>ACRES Corncrake Scorecard</td>
+      <td>B3 Does field contain Early &amp; Late cover crop?</td>
+      <td>No=0, Yes=5</td>
+      <td>Presence/Absence</td>
+      <td>Field/patch (&lt;1m, UAV RGB)</td>
+      <td>UAV RGB, Multispectral</td>
+      <td>High accuracy for large plots (Radoux et al., 2016); OA = 91.4% for pasture classification using SLIC-RF (Kawamura et al., 2024)</td>
+      <td>OBIA, supervised classification, change detection</td>
+      <td>(Radoux et al., 2016)</td>
+      <td>&lt;1m</td>
+      <td>High</td>
+      <td>YES</td>
+      <td>Feasibility: HIGH (for plots &gt;500m²). Early/Late Cover plots &gt;500m² are reliably detectable through temporal analysis. Challenges: Small or patchy ELC areas require field validation. Solutions: Use sub-meter resolution UAV imagery; apply super-pixel segmentation (SLIC); combine with management records; implement change detection algorithms.</td>
+    </tr>
+    <tr>
+      <td>ACRES Corncrake Scorecard</td>
+      <td>B4 Area of early &amp; late cover in field</td>
+      <td>&lt;500m²=0, 500-1000m²=5, &gt;1000m²=10</td>
+      <td>Area (m²/% field)</td>
+      <td>Field/patch (&lt;1m, UAV RGB)</td>
+      <td>UAV RGB, Multispectral</td>
+      <td>High precision for area measurement (Betbeder et al., 2014); Sub-meter accuracy achievable with UAV systems</td>
+      <td>OBIA, edge detection, automated area calculation</td>
+      <td>(Betbeder et al., 2014)</td>
+      <td>&lt;1m</td>
+      <td>High</td>
+      <td>YES</td>
+      <td>Feasibility: HIGH. UAV enables precise area measurement of ELC plots with automated boundary detection. Challenges: Irregular boundaries and mixed vegetation types. Solutions: Use high-resolution UAV imagery; apply advanced edge detection algorithms; integrate with field management data; use multi-temporal analysis for boundary validation.</td>
+    </tr>
+    <tr>
+      <td>ACRES Corncrake Scorecard</td>
+      <td>B5 Percentage of characteristic species in early &amp; late cover plot</td>
+      <td>&lt;25%=0, 25-50%=5, &gt;50%=10</td>
+      <td>% cover</td>
+      <td>Field/patch (&lt;1m, UAV RGB)</td>
+      <td>UAV RGB, Multispectral</td>
+      <td>Medium accuracy for dominant species (Dyrmann et al., 2016); Species-specific accuracy varies significantly</td>
+      <td>OBIA, CNN, ML species classification</td>
+      <td>(Dyrmann et al., 2016)</td>
+      <td>&lt;1m</td>
+      <td>Medium</td>
+      <td>PARTIAL</td>
+      <td>Feasibility: MEDIUM. Dominant ELC species (Meadowsweet, Nettles, Angelica) are detectable during flowering periods. Challenges: Cryptic species and precise coverage percentages require field surveys. Solutions: Focus on flowering periods; use hyperspectral sensors for species discrimination; develop species-specific classification models; integrate field validation protocols.</td>
+    </tr>
+    <tr>
+      <td>ACRES Corncrake Scorecard</td>
+      <td>B6 Additional features present in field benefiting corncrakes</td>
+      <td>No=0, 1 feature=5, &gt;1 feature=10</td>
+      <td>Count (features)</td>
+      <td>Field/patch (&lt;1m, UAV RGB/LiDAR)</td>
+      <td>UAV RGB, UAV LiDAR, Sentinel-2</td>
+      <td>High accuracy for large features (Puliti et al., 2020); Variable accuracy depending on feature type</td>
+      <td>OBIA, CNN, LiDAR 3D analysis</td>
+      <td>(Puliti et al., 2020)</td>
+      <td>&lt;1m-10m</td>
+      <td>Medium</td>
+      <td>PARTIAL</td>
+      <td>Feasibility: MEDIUM. Rocky outcrops, unmown headlands (&gt;5% plot), and reed patches are detectable using multi-sensor approaches. Challenges: Small features and species composition in boundaries. Solutions: Combine optical and LiDAR data; use 3D analysis for structural features; apply object-based classification; integrate topographic analysis.</td>
+    </tr>
+    <tr>
+      <td>ACRES Corncrake Scorecard</td>
+      <td>C1 Evidence of damaging activities to habitat, vegetation, or archaeology</td>
+      <td>None=0, Low=-5, Moderate=-15, High=-25</td>
+      <td>% area</td>
+      <td>Field/farm (10m, Sentinel-2; &lt;1m, UAV)</td>
+      <td>UAV RGB, Sentinel-2</td>
+      <td>OA = 93.5% (disturbance detection) (Connolly &amp; Holden, 2017); High accuracy for large-scale changes</td>
+      <td>Change detection, OBIA, multi-temporal analysis</td>
+      <td>(Connolly &amp; Holden, 2017)</td>
+      <td>10m-&lt;1m</td>
+      <td>High</td>
+      <td>YES</td>
+      <td>Feasibility: HIGH. Large-scale damage (burning, dumping, quarrying, machinery tracks) is reliably detected through automated change detection. Challenges: Subtle damage (herbicide use, archaeological impacts) requires field validation. Solutions: Use high-temporal resolution imagery; apply advanced change detection algorithms; integrate archaeological databases; use spectral change analysis.</td>
+    </tr>
+    <tr>
+      <td>ACRES Corncrake Scorecard</td>
+      <td>C2 Level of risk to quality of natural water bodies</td>
+      <td>None=0, Low=-5, Moderate=-15, High=-25</td>
+      <td>Risk (qualitative)</td>
+      <td>Field/farm (10m, Sentinel-2; &lt;1m, UAV)</td>
+      <td>Sentinel-2, UAV RGB, LiDAR, SAR</td>
+      <td>OA = 0.95 (RF, SAR+Sentinel-2) (Sahour et al., 2021; Abdelmajeed &amp; Juszczak, 2024); OA = 94.6% (XGBoost + GIS)</td>
+      <td>NDWI, proximity analysis, LiDAR slope, TWI; XGBoost classifier + geospatial analysis</td>
+      <td>(Sahour et al., 2021; Abdelmajeed &amp; Juszczak, 2024); Rammohan et al. (2024)</td>
+      <td>10m-&lt;1m</td>
+      <td>High</td>
+      <td>YES</td>
+      <td>Feasibility: HIGH. Multi-sensor fusion approach effectively maps water presence, connectivity, and pollution risk zones. Challenges: Complex hydrological processes require ground validation. Solutions: Integrate multiple RS data sources; use machine learning models (RF, GAM); apply watershed-scale analysis; combine with ground-based monitoring.</td>
+    </tr>
+    <tr>
+      <td>ACRES Corncrake Scorecard</td>
+      <td>C3 Cover of non-native invasive species</td>
+      <td>None=0, Low=-5, Moderate=-10, High=-20</td>
+      <td>% cover</td>
+      <td>Field/patch (10m, Sentinel-2; &lt;1m, UAV; 0.3m, WorldView-3)</td>
+      <td>UAV RGB, WorldView-3, Sentinel-2</td>
+      <td>F1 = 0.52-0.98 (dominant species) (Huelsman et al., 2022; Rakotoarivony et al., 2023); Accuracy varies significantly by species</td>
+      <td>OBIA, CNN, multi-temporal flowering mapping</td>
+      <td>(Huelsman et al., 2022; Rakotoarivony et al., 2023)</td>
+      <td>0.3m-10m</td>
+      <td>Medium</td>
+      <td>PARTIAL</td>
+      <td>Feasibility: MEDIUM. Large invasive monocultures (Japanese Knotweed, Himalayan Balsam) are reliably mapped during flowering periods. Challenges: Scattered individuals and early-stage invasions require field surveys. Solutions: Use multi-temporal analysis during flowering; apply species-specific spectral signatures; integrate citizen science data; use hyperspectral sensors for species discrimination.</td>
+    </tr>
+    <tr>
+      <td>ACRES Corncrake Scorecard</td>
+      <td>C4 Machinery operations &amp; mowing/grazing between 15th May - 15th August</td>
+      <td>Yes=-60, No=10</td>
+      <td>Presence/Absence</td>
+      <td>Field/farm (10m, Sentinel-2; &lt;1m, UAV)</td>
+      <td>UAV RGB, Sentinel-2, Sentinel-1 SAR</td>
+      <td>High accuracy for pattern detection (Radoux et al., 2016); Reliable temporal change detection</td>
+      <td>OBIA, time-series analysis, SAR backscatter change</td>
+      <td>(Radoux et al., 2016)</td>
+      <td>10m-&lt;1m</td>
+      <td>High</td>
+      <td>YES</td>
+      <td>Feasibility: HIGH. Mowing/cutting patterns and timing are reliably detectable via SAR/optical time-series analysis, with UAV validation of management timing. Critical for corncrake conservation during the breeding season (May 15–August 15). Automated alerts enable scheme compliance monitoring.\nChallenges: Weather-related delays in optical image acquisition.\nSolutions: Use SAR for weather-independent monitoring; combine multiple satellite platforms; implement automated alert systems; develop compliance protocols.</td>
+    </tr>
+    <tr>
+      <td>Summary RS suitability</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <td>RS is Appropriate - YES: 10 indicators (71%)</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <td>RS is Appropriate - PARTIAL: 5 indicators (36%)</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <td>RS is Appropriate - NO: 1 indicator (7%</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+  </tbody>
+</table></div><div class='card-box'><h2>8. Breeding Warder </h2><table border="1" class="dataframe display nowrap">
+  <thead>
+    <tr style="text-align: right;">
+      <th>Score Card</th>
+      <th>ACRES Action</th>
+      <th>Score Value</th>
+      <th>Score Unit</th>
+      <th>Resolution (RS platform, scale)</th>
+      <th>RS Technology</th>
+      <th>Accuracy Reported (literature)</th>
+      <th>Method</th>
+      <th>Reference</th>
+      <th>Detectability</th>
+      <th>Accuracy (linked to resolution)</th>
+      <th>RS is appropriate</th>
+      <th>Comments/Notes (RS Integration suitability)</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>ACRES Breeding Warder</td>
+      <td>A1 Number of postive indicators in the field</td>
+      <td>High: 10\nModerate: 5\nLow: 0</td>
+      <td>NaN</td>
+      <td>UAV (1–10 cm), Sentinel-2 (10 m)</td>
+      <td>Multispectral, Object-based</td>
+      <td>OA: 60–70% (UAV, 1 m)  for vegetation type and indicator mapping with UAV multispectral imagery at 1 m resolution.</td>
+      <td>Object-based classification</td>
+      <td>(Suo et al., 2018)</td>
+      <td>Moderate</td>
+      <td>1 cm: Individual plants; 1 m: patches; 10 m: only dominant types</td>
+      <td>Partial</td>
+      <td>RS can map broad vegetation types, but species-level ID for all positive indicators is challenging. UAVs improve accuracy but require field validation</td>
+    </tr>
+    <tr>
+      <td>ACRES Breeding Warder</td>
+      <td>A2 combined cover of positive indicators</td>
+      <td>High: 10\nMedium: 5\nLow: 0</td>
+      <td>Number of indicators</td>
+      <td>UAV (1–10 cm), Sentinel-2 (10 m)</td>
+      <td>Multispectral, NDVI</td>
+      <td>OA: 60–70% (1 m)</td>
+      <td>Vegetation indices</td>
+      <td>(Suo et al., 2018)</td>
+      <td>High</td>
+      <td>1 cm: Patch-level cover; 1 m: patch-level; 10 m: field-level</td>
+      <td>Yes</td>
+      <td>RS can estimate total cover of positive indicators. Spectral similarity between species is a challenge; field calibration improves accuracy.</td>
+    </tr>
+    <tr>
+      <td>ACRES Breeding Warder</td>
+      <td>A3 Combined cover of negative indicators/weeds</td>
+      <td>Low: 5\nModerate: 0\nHigh: -5</td>
+      <td>% field cover</td>
+      <td>UAV (1–10 cm), Hyperspectral (1 m), Sentinel-2 (10 m)</td>
+      <td>Hyperspectral, Multispectral</td>
+      <td>OA: up to 95% for invasive species detection with hyperspectral and UAV data at 1 m resolution.</td>
+      <td>Object-based, hyperspectral</td>
+      <td>(Rakgoale et al., 2024)</td>
+      <td>High</td>
+      <td>1 cm: Individual weed clumps; 1 m: small patches; 10 m: only large infestations</td>
+      <td>Yes</td>
+      <td>RS, especially hyperspectral/UAV, can map invasive weeds. Spectral confusion possible; combine temporal data and field validation.</td>
+    </tr>
+    <tr>
+      <td>ACRES Breeding Warder</td>
+      <td>A4  Quality of Vegetation structure</td>
+      <td>High: 20\nModerate: 10\nPoor: 0</td>
+      <td>Sward height class</td>
+      <td>UAV LiDAR (1–10 cm), GEDI (25 m), Sentinel-1 (10 m)</td>
+      <td>LiDAR, SAR, Multispectral</td>
+      <td>R²: 0.53–0.82 (LiDAR, 1 m)</td>
+      <td>3D Structure, Sward height</td>
+      <td>(Wagner et al., 2024)</td>
+      <td>High</td>
+      <td>1 cm: Individual tussocks; 1 m: patch-level; 10–25 m: only broad structure</td>
+      <td>Yes</td>
+      <td>LiDAR at 1–10 cm resolves sward height; GEDI/SAR can map sward height and structure at field scale. LiDAR is costly; SAR (Sentinel-1) is a scalable alternative.</td>
+    </tr>
+    <tr>
+      <td>ACRES Breeding Warder</td>
+      <td>A5 Marsh Fritiality</td>
+      <td>Yes: 10\nNo: 0</td>
+      <td>Presence/Absence</td>
+      <td>UAV (1–10 cm), Sentinel-2 (10 m)</td>
+      <td>Multispectral, NDVI</td>
+      <td>OA: 60–70% (1 m);  for habitat mapping of indicator species using UAV multispectral imagery at 1 m resolution is 60–70% (Suo, McGovern, &amp; Gilmer, 2019).</td>
+      <td>Habitat mapping</td>
+      <td>(Suo et al., 2018)</td>
+      <td>Moderate</td>
+      <td>1 cm: Host plant patches; 1 m: large groups; 10 m: only if dominant</td>
+      <td>Partial</td>
+      <td>RS can map host plant cover, but detailed suitability needs ground survey. Use RS for pre-screening, then field checks.</td>
+    </tr>
+    <tr>
+      <td>ACRES Breeding Warder</td>
+      <td>A6 single most dominant type of rush</td>
+      <td>(See A6a/A6b)</td>
+      <td>Dominance</td>
+      <td>UAV (1–10 cm), Sentinel-2 (10 m)</td>
+      <td>Multispectral, Texture</td>
+      <td>OA: 60–70% (1 m)</td>
+      <td>Object-based</td>
+      <td>(Suo et al., 2018)</td>
+      <td>Moderate</td>
+      <td>1–10 cm: Rush clumps; 1 m: patches; 10 m: only extensive dominance</td>
+      <td>Yes</td>
+      <td>RS can distinguish rush-dominated areas using spectral and texture features. Field validation needed for rush species.</td>
+    </tr>
+    <tr>
+      <td>ACRES Breeding Warder</td>
+      <td>A6a Level of dense rush</td>
+      <td>High: -10\nModerate: 0\nLow: 5\nVery Low: 15</td>
+      <td>% field cover</td>
+      <td>UAV (1–10 cm), Sentinel-2 (10 m)</td>
+      <td>Multispectral, Texture</td>
+      <td>OA: 60–70% (1 m)</td>
+      <td>NDVI/texture</td>
+      <td>(Suo et al., 2018)</td>
+      <td>High</td>
+      <td>1 cm: Dense rush patches; 1 m: patch-level; 10 m: only field-dominated</td>
+      <td>Yes</td>
+      <td>Dense rush can be detected by NDVI and texture. UAVs provide high resolution. Confusion with other dense vegetation possible; supervised classification with field data recommended.</td>
+    </tr>
+    <tr>
+      <td>ACRES Breeding Warder</td>
+      <td>A6b Level of Sparse rush</td>
+      <td>High: 0\nModerate: 5\nLow: 15</td>
+      <td>% field cover</td>
+      <td>UAV (1–10 cm), Sentinel-2 (10 m)</td>
+      <td>Multispectral, Texture</td>
+      <td>OA: 60–70% (1 m)</td>
+      <td>NDVI/texture</td>
+      <td>(Suo et al., 2018)</td>
+      <td>Moderate</td>
+      <td>1 cm: Sparse clumps; 1 m: small patches; 10 m: only if widespread</td>
+      <td>Yes</td>
+      <td>Sparse rush detection is harder due to mixed pixels. High-res UAVs recommended for patchy cover.</td>
+    </tr>
+    <tr>
+      <td>ACRES Breeding Warder</td>
+      <td>B Wet features Hydrology</td>
+      <td>Excellent: 15\nGood: 10\nLimited: 0\nPoor: -10</td>
+      <td>Hydrology class</td>
+      <td>Sentinel-1 (10 m), UAV (1–10 cm)</td>
+      <td>SAR, Multispectral</td>
+      <td>OA: 70–90% (10 m)</td>
+      <td>SAR backscatter, NDWI</td>
+      <td>(EPA Ireland, 2023)</td>
+      <td>High</td>
+      <td>1 cm: Small pools/ditches; 1 m: small features; 10 m: only large wet areas</td>
+      <td>Yes</td>
+      <td>Sentinel-1 SAR and Sentinel-2 NDWI effective for mapping wet features. Seasonal variation a challenge; use multi-temporal analysis. Irish projects have mapped these features successfully.</td>
+    </tr>
+    <tr>
+      <td>ACRES Breeding Warder</td>
+      <td>C1 Evidence of damaging activities to habitat, vegetation, or archaeology</td>
+      <td>High: -25\nModerate: -15\nLow: -5\nNone: 0</td>
+      <td>% field affected</td>
+      <td>Sentinel-2 (10 m), UAV (1–10 cm)</td>
+      <td>Multispectral, Change detection</td>
+      <td>OA: 60–80% (10 m)</td>
+      <td>Change detection</td>
+      <td>(Suo et al., 2018)</td>
+      <td>Moderate</td>
+      <td>1 cm: Individual tracks/damage; 1 m: small patches; 10 m: only large-scale damage</td>
+      <td>Partial</td>
+      <td>UAVs can detect subtle damage; Sentinel-2 only for extensive, visible changes; RS can detect large-scale disturbances (e.g., burning, dumping) but not all damaging activities. Subtle impacts require field checks.</td>
+    </tr>
+    <tr>
+      <td>ACRES Breeding Warder</td>
+      <td>C2 Risk to water quality in nattural water bodies</td>
+      <td>High: -30\nModerate: -20\nLow: -10\nNone: 0</td>
+      <td>Risk level</td>
+      <td>Sentinel-2 (10 m), Copernicus</td>
+      <td>Multispectral, Indices</td>
+      <td>OA: 70–90% (10 m)</td>
+      <td>NDWI, turbidity indices</td>
+      <td>(EPA Ireland, 2023)</td>
+      <td>Moderate</td>
+      <td>10 m: Only field/stream scale; cannot detect point pollution</td>
+      <td>Yes</td>
+      <td>Field/stream-scale risk detectable; in situ data needed for fine-scale pollutants.; RS can monitor turbidity, algal blooms, sediment, and proxies for water quality. Cannot detect all pollutants; integrate with in situ data.</td>
+    </tr>
+    <tr>
+      <td>ACRES Breeding Warder</td>
+      <td>C3 Cover of non-native species</td>
+      <td>High: -20\nModerate: -15\nLow: -5\nNone: 0</td>
+      <td>% field cover</td>
+      <td>UAV (1–10 cm), Hyperspectral (1 m), Sentinel-2 (10 m)</td>
+      <td>Hyperspectral, Object-based</td>
+      <td>OA: up to 95% (1 m)</td>
+      <td>Object-based, ML</td>
+      <td>(Rakgoale et al., 2024)</td>
+      <td>High</td>
+      <td>1 cm: Individual plants; 1 m: small patches; 10 m: only dominant infestations</td>
+      <td>Yes</td>
+      <td>UAV/hyperspectral best for early detection; Sentinel-2 only for widespread invasives. Also, detect invasive species with high accuracy. Spectral confusion possible; use temporal data and field validation.</td>
+    </tr>
+    <tr>
+      <td>ACRES Breeding Warder</td>
+      <td>C4 Extent of spreading immature scrub</td>
+      <td>High: -10\nModerate: 0\nLow: 5</td>
+      <td>% field cover</td>
+      <td>UAV LiDAR (1–10 cm), Sentinel-2 (10 m)</td>
+      <td>LiDAR, Multispectral</td>
+      <td>OA: 60–80% (1 m)</td>
+      <td>Height filtering</td>
+      <td>(Wagner et al., 2024)</td>
+      <td>Moderate</td>
+      <td>1 cm: Individual saplings; 1 m: patch-level; 10 m: only extensive immature scrub</td>
+      <td>Yes</td>
+      <td>LiDAR/UAVs resolve small scrub; Sentinel-2 only for large patches. RS can map scrub cover; LiDAR distinguishes height classes. Cost is a challenge; combine with Sentinel-2 for broader mapping.</td>
+    </tr>
+    <tr>
+      <td>ACRES Breeding Warder</td>
+      <td>C5 Established Scrub &gt;1m</td>
+      <td>High: -10\nModerate: -5\nLow: 0\nNone: 5\t</td>
+      <td>% field cover</td>
+      <td>UAV LiDAR (1–10 cm), Sentinel-2 (10 m)</td>
+      <td>LiDAR, Multispectral</td>
+      <td>OA: 60–80% (1 m)</td>
+      <td>Height thresholding</td>
+      <td>(Wagner et al., 2024)</td>
+      <td>High</td>
+      <td>1 cm: Individual shrubs; 1 m: patch-level; 10 m: only extensive scrub</td>
+      <td>Yes</td>
+      <td>LiDAR is best for height-based scrub mapping; Sentinel-2 less precise. Cost is a challenge; sample LiDAR + Sentinel-2 for scaling up.</td>
+    </tr>
+    <tr>
+      <td>ACRES Breeding Warder</td>
+      <td>C6 Trees &gt;1m</td>
+      <td>High: Tree(s) ≥2m: –10; Moderate: Tree(s) 1–2m: –5; Low: No trees: 5</td>
+      <td>Presence/absence and height class</td>
+      <td>UAV LiDAR (1–10 cm), GEDI (25 m), Sentinel-2 (10 m)</td>
+      <td>LiDAR, Multispectral</td>
+      <td>R²: 0.53–0.82 (LiDAR, 1 m); RMSE: 1.6–6 m (GEDI, 25 m) (Wagner et al., 2024; Fayad et al., 2024)</td>
+      <td>Height thresholding, ML</td>
+      <td>(Wagner et al., 2024; Fayad et al., 2024)</td>
+      <td>High</td>
+      <td>1 cm: Individual trees and height class; 1 m: Small groups; 10–25 m: Only dominant trees or stands</td>
+      <td>Yes</td>
+      <td>Trees &gt;1m defined by height threshold. LiDAR is gold standard; Sentinel-2/texture can help at lower accuracy. Small trees may be missed by coarser sensors.</td>
+    </tr>
+    <tr>
+      <td>ACRES Breeding Warder</td>
+      <td>C7 Machinery operations btn 15th March - 30th June</td>
+      <td>NaN</td>
+      <td>Presence/Absence</td>
+      <td>Sentinel-1 (10 m), Copernicus</td>
+      <td>SAR, Multispectral</td>
+      <td>OA: 70–90% (10 m)</td>
+      <td>Time-series change detection</td>
+      <td>(Copernicus, 2022)</td>
+      <td>High</td>
+      <td>1 cm: Tracks/vehicle marks; 1 m: small operations; 10 m: only large field changes</td>
+      <td>Yes</td>
+      <td>Sentinel-1/2 can detect major field operations; UAVs for detailed mapping. Copernicus/Sentinel can detect field operations via temporal change in reflectance/backscatter. Cloud cover is a challenge for optical; use SAR (Sentinel-1).</td>
+    </tr>
+  </tbody>
+</table></div><div class='card-box'><h2>9. Chough Scorecard</h2><table border="1" class="dataframe display nowrap">
+  <thead>
+    <tr style="text-align: right;">
+      <th>Score Card</th>
+      <th>ACRES Action</th>
+      <th>Score Value</th>
+      <th>Score Unit</th>
+      <th>Resolution (RS platform, scale)</th>
+      <th>RS Technology</th>
+      <th>Accuracy Reported (literature)</th>
+      <th>Method</th>
+      <th>Reference</th>
+      <th>Detectability</th>
+      <th>Accuracy</th>
+      <th>RS is appropriate</th>
+      <th>Comments/Notes (RS Integration)</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Acres Chough Scorecard</td>
+      <td>A1 Number of positive indicators</td>
+      <td>Low: 0 (0-5 spp.); Moderate: 10 (6-8 spp.); High: 20 (9+ spp.)</td>
+      <td>Count</td>
+      <td>UAV RGB (&lt;10cm), Sentinel-2 (10m)</td>
+      <td>UAV RGB, Sentinel-2, DeepLabV3+ CNN</td>
+      <td>F1 = 0.91–0.94 for dominant forbs and indicators (Liu et al., 2024)</td>
+      <td>Deep learning (CNN)</td>
+      <td>Liu et al., 2024</td>
+      <td>&lt;1m–10m</td>
+      <td>High</td>
+      <td>PARTIAL</td>
+      <td>RS is highly feasible for dominant/flowering indicators using UAV or high-res satellite imagery and AI-based classification. Cryptic/rare species may be underrepresented; the solution is to combine RS-driven mapping for rapid, objective assessment with targeted field surveys for cryptic species (Du et al., 2024; Masenyama et al., 2024).</td>
+    </tr>
+    <tr>
+      <td>Acres Chough Scorecard</td>
+      <td>A2 combined cover of positive indicators</td>
+      <td>Low: 0 (&lt;5%); Moderate: 10 (6–8%); High: 20 (9%+)</td>
+      <td>% cover</td>
+      <td>Sentinel-2 (10m), UAV RGB (&lt;1m)</td>
+      <td>Sentinel-2, UAV RGB, Random Forest</td>
+      <td>R² = 0.89 for Sentinel-2+RF grassland cover (Martinez Prentice et al., 2023)</td>
+      <td>Random Forest regression, OBIA</td>
+      <td>Martinez Prentice et al., 2023</td>
+      <td>10m/&lt;1m</td>
+      <td>High</td>
+      <td>YES</td>
+      <td>RS enables robust, repeatable estimation of positive indicator cover at field and landscape scales. Mixed pixels at coarser resolutions may underrepresent rare species; use UAV for calibration/fine-scale mapping and multi-temporal composites for phenological variation (Masenyama et al., 2024; Martinez Prentice et al., 2023).</td>
+    </tr>
+    <tr>
+      <td>Acres Chough Scorecard</td>
+      <td>A3 Combined cover of negative indicators/weeds</td>
+      <td>High: -20 (&gt;25%); Moderate: -10 (5–25%); Low: 0 (&lt;5%)</td>
+      <td>% cover</td>
+      <td>UAV RGB (&lt;10cm), Sentinel-2 (10m)</td>
+      <td>UAV RGB, Deep Learning, Object Detection</td>
+      <td>Precision = 91.3% for weed detection in wheat (Liu et al., 2024); OA = 88% (Matongera et al., 2016)</td>
+      <td>Deep learning (CNN), object detection</td>
+      <td>Liu et al., 2024; Matongera et al., 2016</td>
+      <td>&lt;1m–10m</td>
+      <td>High</td>
+      <td>YES</td>
+      <td>RS is highly effective for mapping dense patches of negative indicators and supports compliance with the Noxious Weeds Act. For scattered/early-stage weeds, supplement object detection with field checks (Matongera et al., 2016; Stokes et al., 2004).</td>
+    </tr>
+    <tr>
+      <td>Acres Chough Scorecard</td>
+      <td>A4 Vegetation structure</td>
+      <td>Low: 0 (uniform tall sward/large bare areas); Moderate: 15 (10–20cm, some bare soil); Good: 30 (&lt;10cm, patchy, bare soil)</td>
+      <td>Qualitative</td>
+      <td>UAV RGB (&lt;10cm), Sentinel-2 (10m)</td>
+      <td>UAV RGB, GLCM texture, SVM</td>
+      <td>OA = 88% for sward structure (GLCM+SVM, Fang et al., 2023)</td>
+      <td>GLCM texture, SVM</td>
+      <td>Fang et al., 2023; Liu et al., 2023</td>
+      <td>&lt;1m–10m</td>
+      <td>High</td>
+      <td>YES</td>
+      <td>Texture metrics (GLCM contrast, entropy) from UAV or Sentinel-2 imagery provide objective, repeatable scoring of sward structure (good/moderate/poor). Calibrate texture thresholds with field data and combine with LiDAR or multi-temporal imagery for robust structure assessment (Fang et al., 2023; Liu et al., 2023).</td>
+    </tr>
+    <tr>
+      <td>Acres Chough Scorecard</td>
+      <td>A5 Landscape elements</td>
+      <td>Low: 0 (absent); Moderate: 10 (occasional); Good: 20 (regular occurrence of mounds/rock)</td>
+      <td>Qualitative</td>
+      <td>National Land Cover Map 2018 (0.1 ha), UAV RGB</td>
+      <td>NLCM 2018, OBIA, GIS, UAV RGB</td>
+      <td>F1 = 0.89 (Level 1), 0.79 (Level 2) for landscape elements (EPA &amp; Tailte Éireann, 2023)</td>
+      <td>OBIA, GIS overlay</td>
+      <td>EPA &amp; Tailte Éireann, 2023</td>
+      <td>0.1 ha/&lt;1m</td>
+      <td>High</td>
+      <td>YES</td>
+      <td>Landscape elements are well mapped using the National Land Cover Map 2018 and UAV imagery. For features &lt;0.1 ha, supplement with UAV or high-res satellite data for comprehensive detection (EPA &amp; Tailte Éireann, 2023; National Land Cover Map of Ireland, 2018).</td>
+    </tr>
+    <tr>
+      <td>Acres Chough Scorecard</td>
+      <td>B1 Evidence of damaging activities to habitat vegetation, or archaeology</td>
+      <td>High: -30 (≥21%/serious); Moderate: -20 (6–20%/moderate); Low: -10 (≤5%/minor); None: 0</td>
+      <td>% area</td>
+      <td>UAV RGB (&lt;10cm), Sentinel-2 (10m)</td>
+      <td>UAV RGB, Sentinel-2, change detection</td>
+      <td>OA = 85% for damage detection (Sentinel-2, Ghosh et al., 2023)</td>
+      <td>Change detection, OBIA</td>
+      <td>Ghosh et al., 2023</td>
+      <td>&lt;1m–10m</td>
+      <td>High</td>
+      <td>YES</td>
+      <td>RS allows rapid detection of large-scale damage and supports consistent monitoring. Use high-frequency imagery for episodic events and integrate RS with periodic field validation for subtle impacts (Wu et al., 2025; Ghosh et al., 2023).</td>
+    </tr>
+    <tr>
+      <td>Acres Chough Scorecard</td>
+      <td>B2 Risk to the riak of natural water bodies</td>
+      <td>High: -25; Moderate: -15; Low: -5; None: 0</td>
+      <td>Qualitative</td>
+      <td>Sentinel-2 (10m), UAV RGB (&lt;1m), LiDAR</td>
+      <td>Sentinel-2, UAV, LiDAR, NDWI, XGBoost</td>
+      <td>OA = 92% for water risk mapping (Sentinel-2+XGBoost, Diehl et al., 2024)</td>
+      <td>NDWI, XGBoost</td>
+      <td>Diehl et al., 2024</td>
+      <td>10m/&lt;1m</td>
+      <td>High</td>
+      <td>YES</td>
+      <td>RS enables mapping of water presence, connectivity, and pollution risk using spectral indices and ML. Integrate multi-sensor RS data (LiDAR, UAV, Sentinel-2) and field data for comprehensive risk assessment (Diehl et al., 2024).</td>
+    </tr>
+    <tr>
+      <td>Acres Chough Scorecard</td>
+      <td>B3 Extent of bare soil erosion</td>
+      <td>High: -30 (excessive); Moderate: -20 (stock routes/minor loss); Low: -10 (restricted to paths/minor loss); None: 0</td>
+      <td>% cover</td>
+      <td>UAV RGB (&lt;10cm), Sentinel-2 (10m)</td>
+      <td>UAV RGB, Sentinel-2, OBIA, SVM</td>
+      <td>OA = 87% for bare soil/erosion mapping (Novak et al., 2024); review of RS for erosion: high accuracy (Wang et al., 2025)</td>
+      <td>OBIA, SVM, NDVI/NDWI</td>
+      <td>Novak et al., 2024; Wang et al., 2025</td>
+      <td>&lt;1m–10m</td>
+      <td>High</td>
+      <td>YES</td>
+      <td>RS enables accurate, field-scale mapping of bare soil and erosion. Use multi-temporal imagery for changes and supplement with field checks for subtle erosion (Novak et al., 2024; Wang et al., 2025)</td>
+    </tr>
+    <tr>
+      <td>Acres Chough Scorecard</td>
+      <td>B4 Cover of non-native species</td>
+      <td>High: -20 (abundant/dense clumps); Moderate: -10 (frequent/some flowering); Low: 0 (scattered, not flowering); None: 0</td>
+      <td>% cover</td>
+      <td>UAV RGB (&lt;10cm), Sentinel-2 (10m), thermal UAV</td>
+      <td>UAV RGB, Sentinel-2, Mask R-CNN, Object Detection</td>
+      <td>OA = 88% for bracken and invasive mapping (Matongera et al., 2016); F1 = 0.91–0.93 for weed detection (Liu et al., 2024)</td>
+      <td>Mask R-CNN, object detection</td>
+      <td>Matongera et al., 2016; Liu et al., 2024; Stokes et al., 2004</td>
+      <td>&lt;1m–10m</td>
+      <td>High</td>
+      <td>YES</td>
+      <td>RS enables rapid, large-area mapping of key noxious weeds in line with the Noxious Weeds Act. Combine RS with targeted field surveys for early detection and comprehensive coverage (Matongera et al., 2016; Stokes et al., 2004)</td>
+    </tr>
+    <tr>
+      <td>Acres Chough Scorecard</td>
+      <td>B5 Extent of Spreading  immature scrub</td>
+      <td>High: -20 (&gt;25%); Moderate: -10 (11–25%); Low: 0 (&lt;10%)</td>
+      <td>% cover</td>
+      <td>UAV RGB (&lt;10cm), Sentinel-2 (10m)</td>
+      <td>UAV RGB, Sentinel-2, U-Net DL</td>
+      <td>OA = 90% for immature scrub mapping (Pineda et al., 2024)</td>
+      <td>U-Net, photogrammetry</td>
+      <td>(Medeiros et al., 2025); Wang et al., 2025</td>
+      <td>&lt;1m–10m</td>
+      <td>High</td>
+      <td>YES</td>
+      <td>RS with UAV and deep learning (U-Net) enables accurate mapping of immature scrub patches. Integrate UAV photogrammetry and field validation for fine-scale detection (Pineda et al., 2024)</td>
+    </tr>
+    <tr>
+      <td>Acres Chough Scorecard</td>
+      <td>B6 Cover of Bracken</td>
+      <td>High: -20 (&gt;50%/dense stands); Moderate: -10 (dense patches/closed canopy); Low: 0 (scattered/none closed canopy)</td>
+      <td>% cover</td>
+      <td>UAV multispectral (&lt;10cm), Sentinel-2 (10m)</td>
+      <td>Multispectral UAV, Sentinel-2, Random Forest, SVM</td>
+      <td>OA = 88% for bracken mapping (Matongera et al., 2016)</td>
+      <td>Random Forest, SVM, OBIA</td>
+      <td>Matongera et al., 2016</td>
+      <td>&lt;1m–10m</td>
+      <td>High</td>
+      <td>YES</td>
+      <td>RS allows precise, repeatable bracken mapping, especially during peak growth. Use multi-temporal imagery to capture phenological changes and supplement with field checks for low-density areas (Matongera et al., 2016).</td>
+    </tr>
+  </tbody>
+</table></div><div class='card-box'><h2>10. Coastal grassland</h2><table border="1" class="dataframe display nowrap">
+  <thead>
+    <tr style="text-align: right;">
+      <th>Score Card</th>
+      <th>ACRES Action</th>
+      <th>Score Value</th>
+      <th>Score Unit</th>
+      <th>Resolution (RS platform, scale)</th>
+      <th>RS Technology</th>
+      <th>Accuracy</th>
+      <th>Method</th>
+      <th>Reference</th>
+      <th>Detectability</th>
+      <th>Accuracy.1</th>
+      <th>RS is appropriate</th>
+      <th>Comments/Notes (RS Integration)</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Acres Coastal grassland</td>
+      <td>A1 Number of positive indicators</td>
+      <td>0-4=0, 5-8=10, 9-12=20, 13+=25</td>
+      <td>Count (species)</td>
+      <td>Plant species (&lt;1m, UAV RGB/HSI)</td>
+      <td>UAV multispectral &amp; LiDAR; ResNet, OBIA</td>
+      <td>OA = 85.6% (RF+LiDAR+MS, Pricope et al., 2024); OA = 92.7% (ResNet+TOFs, Ke et al., 2024)</td>
+      <td>Deep learning (ResNet), OBIA</td>
+      <td>Pricope et al., 2024; Ke et al., 2024</td>
+      <td>&lt;1m</td>
+      <td>High</td>
+      <td>PARTIAL</td>
+      <td>Feasibility:High for dominant/flowering indicators; deep learning with time-series features boosts detection of cryptic species.Challenges:Small/cryptic species remain difficult.Solutions:Combine UAV multispectral and LiDAR with deep learning and time-series analysis; supplement with field survey for full indicator list.</td>
+    </tr>
+    <tr>
+      <td>Acres Coastal grassland</td>
+      <td>A2 combined cover of positive indicators</td>
+      <td>Very low=0, Low=5, Moderate=10, High=20, Very high=25</td>
+      <td>% cover</td>
+      <td>Sentinel-2 (10m), UAV multispectral (&lt;1m)</td>
+      <td>Sentinel-2, UAV multispectral, RF, time-series composites</td>
+      <td>OA = 84% (RF, Sentinel-1/2, Szymczak et al., 2024); R² = 0.83–0.93 (NDVI/NDWI, Ge et al., 2024)</td>
+      <td>Random Forest, time-series composites</td>
+      <td>Szymczak et al., 2024; Ge et al., 2024</td>
+      <td>10m/&lt;1m</td>
+      <td>High</td>
+      <td>YES</td>
+      <td>Feasibility:Robust cover estimation at 10m with Sentinel-2; time-series composites and red-edge bands improve discrimination; UAV fusion increases accuracy for rare species.Challenges:Mixed pixels at 10m; rare species underrepresented.Solutions:Fuse UAV data for calibration; use OBIA and red-edge bands.</td>
+    </tr>
+    <tr>
+      <td>Acres Coastal grassland</td>
+      <td>A3 Combined cover of negative indicators/weeds</td>
+      <td>High=-20, Moderate=-10, Low=0</td>
+      <td>% cover</td>
+      <td>UAV multispectral (&lt;1m)</td>
+      <td>UAV multispectral, OBIA, fuzzy classification, ResNet</td>
+      <td>OA = 91% (fuzzy OBIA, Pafumi et al., 2025); F1 = 0.92 (CNN, Ke et al., 2024)</td>
+      <td>OBIA, fuzzy classification, ResNet</td>
+      <td>Pafumi et al., 2025; Ke et al., 2024</td>
+      <td>&lt;1m</td>
+      <td>High</td>
+      <td>YES</td>
+      <td>Feasibility:Best for dense/flowering weed patches; deep learning and fuzzy OBIA outperform classic ML for patchy distributions.Challenges:Scattered/small patches less detectable.Solutions:Use multi-temporal analysis; combine UAV data with ground-truthing.</td>
+    </tr>
+    <tr>
+      <td>Acres Coastal grassland</td>
+      <td>A4 Vegetation structure in Dune and grazed saltmarsh habitats</td>
+      <td>Good=15, Moderate=-5, Poor=-10</td>
+      <td>Qualitative</td>
+      <td>UAV LiDAR + multispectral (&lt;1m)</td>
+      <td>UAV LiDAR, multispectral, RF, OBIA, ResNet</td>
+      <td>OA = 85.6% (RF+LiDAR+MS, Pricope et al., 2024); OA = 92.7% (ResNet+TOFs, Ke et al., 2024)</td>
+      <td>LiDAR, multispectral, ResNet</td>
+      <td>Pricope et al., 2024; Ke et al., 2024</td>
+      <td>&lt;1m</td>
+      <td>High</td>
+      <td>PARTIAL</td>
+      <td>Feasibility: Texture metrics (GLCM contrast, entropy, variance) from UAV or satellite imagery objectively score structure: Good = high texture (heterogeneous, patchy), Moderate = moderate texture (some patchiness), Poor = low texture (homogeneous sward). Challenges: Texture depends on image resolution and seasonality. Solutions: Combine LiDAR, multi-scale texture, and time-series features; calibrate texture thresholds with field data.</td>
+    </tr>
+    <tr>
+      <td>Acres Coastal grassland</td>
+      <td>A5 Marsh Fritillary</td>
+      <td>Yes/No</td>
+      <td>Suitability</td>
+      <td>UAV hyperspectral (&lt;1m)</td>
+      <td>UAV hyperspectral, OBIA, CNN, time-series flowering</td>
+      <td>F1 = 0.88–0.98 (CNN/ResNet, Ke et al., 2024)</td>
+      <td>OBIA, CNN, time-series analysis</td>
+      <td>Ke et al., 2024; Preston et al., 2008</td>
+      <td>&lt;1m</td>
+      <td>Low</td>
+      <td>NO</td>
+      <td>Feasibility:Large stands detectable at peak flowering; time-series and deep learning models increase detection of cryptic forbs.Challenges:Isolated/small plants still require field validation.Solutions:Field survey remains essential for suitability assessment.</td>
+    </tr>
+    <tr>
+      <td>Acres Coastal grassland</td>
+      <td>A6 extent of bare subtrates</td>
+      <td>Very low=10, Low=5, Moderate=0, High=-5</td>
+      <td>% cover</td>
+      <td>UAV multispectral (&lt;1m), LiDAR</td>
+      <td>UAV multispectral, LiDAR, SVM, NDVI/NDWI indices</td>
+      <td>OA = 85.6% (RF+LiDAR+MS, Pricope et al., 2024); OA = 97.6% (SVM, Campillo-Tamarit et al., 2025)</td>
+      <td>SVM, NDVI, NDWI, UAV multispectral, LiDAR</td>
+      <td>Pricope et al., 2024; Campillo-Tamarit et al., 2025</td>
+      <td>&lt;1m</td>
+      <td>High</td>
+      <td>YES</td>
+      <td>Feasibility:Bare sand/soil accurately mapped using NDVI/NDWI and LiDAR-derived elevation; UAV improves patch detection in fine-scale mosaics.Challenges:Small/ephemeral patches.Solutions:Multi-temporal analysis; integrate elevation and spectral indices.</td>
+    </tr>
+    <tr>
+      <td>Acres Coastal grassland</td>
+      <td>B1</td>
+      <td>None=0, Low=-10, Moderate=-20, High=-30</td>
+      <td>% area</td>
+      <td>Sentinel-2 (10m), UAV RGB, SAR</td>
+      <td>Sentinel-2, UAV RGB, SAR, OBIA, time-series change detection</td>
+      <td>OA = 84–93% (change detection, Szymczak et al., 2024)</td>
+      <td>Change detection, OBIA, SAR</td>
+      <td>Szymczak et al., 2024</td>
+      <td>10m</td>
+      <td>High</td>
+      <td>YES</td>
+      <td>Feasibility:High accuracy for large-scale disturbances (trampling, sand extraction, vehicle tracks); time-series and SAR enable robust detection.Challenges:Subtle/chemical impacts.Solutions:Use high-temporal resolution imagery; integrate SAR; field validation for subtle impacts.</td>
+    </tr>
+    <tr>
+      <td>Acres Coastal grassland</td>
+      <td>B2</td>
+      <td>None=0, Low=-5, Moderate=-15, High=-25</td>
+      <td>Risk (qual.)</td>
+      <td>Sentinel-2 (10m), UAV RGB, LiDAR</td>
+      <td>Sentinel-2, UAV RGB, LiDAR, NDWI, MNDWI, XGBoost, TSS</td>
+      <td>OA = 94.6% (XGBoost+GIS, Rammohan et al., 2024); R² = 0.70 (UAV TSS, Diehl et al., 2024)</td>
+      <td>NDWI, MNDWI, XGBoost, TSS estimation</td>
+      <td>Rammohan et al., 2024; Diehl et al., 2024</td>
+      <td>10m</td>
+      <td>High</td>
+      <td>YES</td>
+      <td>Feasibility:Multi-sensor fusion and ML models map water presence, connectivity, and sediment/nutrient risk; TSS estimation feasible for small rivers, especially outside growing season.Challenges:Adjacency effects, seasonal error.Solutions:Use multi-seasonal data, geologic/temporal stratification.</td>
+    </tr>
+    <tr>
+      <td>Acres Coastal grassland</td>
+      <td>B3</td>
+      <td>No drainage=10, Partly drained=0, Drained=-20</td>
+      <td>Qualitative</td>
+      <td>UAV RGB/multispectral (&lt;1m)</td>
+      <td>UAV RGB/multispectral, OBIA, edge detection</td>
+      <td>OA = 91% (fuzzy OBIA, Pafumi et al., 2025)</td>
+      <td>OBIA, edge detection</td>
+      <td>Pafumi et al., 2025</td>
+      <td>&lt;1m</td>
+      <td>High</td>
+      <td>YES</td>
+      <td>Feasibility:Visible drains/ponds detected at &lt;1m resolution; LiDAR and edge detection enhance mapping of subtle features.Challenges:Sub-surface drains.Solutions:Field check for sub-surface; integrate LiDAR for microtopography.</td>
+    </tr>
+    <tr>
+      <td>Acres Coastal grassland</td>
+      <td>B4</td>
+      <td>None=0, Low=-5, Moderate=-10, High=-20</td>
+      <td>% cover</td>
+      <td>UAV multispectral (&lt;1m)</td>
+      <td>UAV multispectral, CNN, time-series flowering, OBIA</td>
+      <td>F1 = 0.92 (CNN, Ke et al., 2024); OA = 91% (fuzzy OBIA, Pafumi et al., 2025)</td>
+      <td>CNN, OBIA, time-series analysis</td>
+      <td>Ke et al., 2024; Pafumi et al., 2025</td>
+      <td>&lt;1m</td>
+      <td>Medium</td>
+      <td>PARTIAL</td>
+      <td>Feasibility:RS effective for large monocultures (e.g., Sea-buckthorn, Japanese Knotweed); time-series and deep learning enhance detection of scattered invasives.Challenges:Early-stage/small individual plant species.Solutions:Use multi-temporal flowering; integrate hyperspectral sensors.</td>
+    </tr>
+    <tr>
+      <td>Acres Coastal grassland</td>
+      <td>B5 Extentof immature scrub</td>
+      <td>High &gt;25% Moderate 11 -25% Low &lt;10%</td>
+      <td>% cover</td>
+      <td>UAV RGB/multispectral (&lt;1m)</td>
+      <td>UAV RGB/multispectral, OBIA, edge detection</td>
+      <td>OA = 91% (fuzzy OBIA, Pafumi et al., 2025); 7–22% cover mapped (Vafidis et al., 2021)</td>
+      <td>OBIA, edge detection, photogrammetry</td>
+      <td>Pafumi et al., 2025; Vafidis et al., 2021</td>
+      <td>&lt;1m</td>
+      <td>High</td>
+      <td>YES</td>
+      <td>Feasibility:Large patches and encroaching scrub detected; small seedlings less reliably mapped; LiDAR can improve vertical structure mapping.Challenges:Confusion with tall herbs/grass.Solutions:Use surface models/point clouds; integrate with field validation.</td>
+    </tr>
+  </tbody>
+</table></div>
+        <script src="https://code.jquery.com/jquery-3.7.0.js"></script>
+        <script src="https://cdn.datatables.net/1.13.6/js/jquery.dataTables.min.js"></script>
+        <script>
+            $(document).ready(function() {
+                $('table.display').DataTable({
+                    "pageLength": 10,
+                    "scrollX": true,
+                    "order": [[ 1, "asc" ]]
+                });
+            });
+        </script>
+    </body>
+    </html>
+    
