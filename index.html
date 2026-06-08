@@ -91,15 +91,17 @@
                     }));
 
                     $(table).DataTable({
-                        data: jsonData,
-                        columns: columnsConfig,
-                        responsive: true,
-                        pageLength: 10,
-                        searching: true,
-                        ordering: true,
-                        lengthChange: false,
-                        order: []
-                    });
+    data: jsonData,
+    columns: columnsConfig,
+    responsive: false,
+    scrollX: true,
+    autoWidth: false,
+    pageLength: 10,
+    searching: true,
+    ordering: true,
+    lengthChange: false,
+    order: []
+});
                 });
             })
             .catch(error => {
