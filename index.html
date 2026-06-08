@@ -6,7 +6,7 @@
     <title>Supplementary Material S2: ACRES RS Suitability Matrix</title>
     <link rel="stylesheet" href="https://cdn.datatables.net/1.13.6/css/jquery.dataTables.min.css">
     <link rel="stylesheet" href="https://cdn.datatables.net/responsive/2.5.0/css/responsive.dataTables.min.css">
-    
+
     <style>
         body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; padding: 40px; background-color: #f4f7f6; }
         h1 { color: #2c3e50; font-size: 24px; margin-bottom: 5px; }
@@ -22,40 +22,45 @@
 <body>
 
     <h1>Supplementary Material S2: ACRES RS Suitability Matrix</h1>
-    <p>Data synchronized directly from your live <strong>data.csv</strong> spreadsheet layout. Use filters to query columns instantly.</p>
+    <p>Data synchronized directly from your live <strong>EI_ACRES matrix_March_Journal_2026.xlsx</strong> workbook. Use filters to query columns instantly.</p>
 
     <div id="tables-container">
-        <p style="text-align: center; color: #7f8c8d;">Reading data.csv spreadsheet data...</p>
+        <p style="text-align: center; color: #7f8c8d;">Reading Excel workbook data...</p>
     </div>
 
     <script src="https://code.jquery.com/jquery-3.7.0.min.js"></script>
     <script src="https://cdn.datatables.net/1.13.6/js/jquery.dataTables.min.js"></script>
     <script src="https://cdn.datatables.net/responsive/2.5.0/js/dataTables.responsive.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.4.1/papaparse.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/xlsx@0.18.5/dist/xlsx.full.min.js"></script>
 
     <script>
-        const csvFilePath = "data.csv";
+        const workbookPath = "EI_ACRES matrix_March_Journal_2026.xlsx";
 
-        Papa.parse(csvFilePath, {
-            download: true,
-            header: true,
-            skipEmptyLines: true,
-            complete: function(results) {
-                const data = results.data;
+        fetch(workbookPath)
+            .then(response => response.arrayBuffer())
+            .then(data => {
+                const workbook = XLSX.read(data, { type: "array" });
                 const container = document.getElementById('tables-container');
                 container.innerHTML = "";
 
-                if (data.length === 0) {
-                    container.innerHTML = "<p>Empty rows discovered inside data.csv.</p>";
+                if (!workbook.SheetNames || workbook.SheetNames.length === 0) {
+                    container.innerHTML = "<p>No worksheets found in the Excel workbook.</p>";
                     return;
                 }
 
-                const groups = [...new Set(data.map(item => item["Score Card"] || item["Scorecard"]))].filter(g => g);
+                workbook.SheetNames.forEach(sheetName => {
+                    const worksheet = workbook.Sheets[sheetName];
+                    const jsonData = XLSX.utils.sheet_to_json(worksheet, { defval: "" });
 
-                groups.forEach(groupName => {
                     const section = document.createElement('div');
                     section.className = 'card-box';
-                    section.innerHTML = `<h2>${groupName}</h2>`;
+                    section.innerHTML = `<h2>${sheetName}</h2>`;
+
+                    if (jsonData.length === 0) {
+                        section.innerHTML += "<p>This worksheet is empty.</p>";
+                        container.appendChild(section);
+                        return;
+                    }
 
                     const table = document.createElement('table');
                     table.className = 'display nowrap responsive';
@@ -64,16 +69,14 @@
                     section.appendChild(table);
                     container.appendChild(section);
 
-                    const filteredData = data.filter(row => (row["Score Card"] || row["Scorecard"]) === groupName);
-
-                    const columnsConfig = Object.keys(filteredData[0]).map(key => ({
+                    const columnsConfig = Object.keys(jsonData[0]).map(key => ({
                         title: key,
                         data: key,
                         defaultContent: "<em>-</em>"
                     }));
 
                     $(table).DataTable({
-                        data: filteredData,
+                        data: jsonData,
                         columns: columnsConfig,
                         responsive: true,
                         pageLength: 10,
@@ -83,12 +86,12 @@
                         order: []
                     });
                 });
-            },
-            error: function(err) {
+            })
+            .catch(error => {
                 document.getElementById('tables-container').innerHTML =
-                    `<p style="color:red;">Error loading data.csv file content.</p>`;
-            }
-        });
+                    `<p style="color:red;">Error loading Excel workbook content.</p>`;
+                console.error(error);
+            });
     </script>
 </body>
 </html>
