@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Supplementary Material S2: ACRES RS Suitability Matrix</title>
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.13.6/css/jquery.dataTables.min.css">
+    <link rel="stylesheet" href="https://cdn.datatables.net/responsive/2.5.0/css/responsive.dataTables.min.css">
+    
+    <style>
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; padding: 40px; background-color: #f4f7f6; }
+        h1 { color: #2c3e50; font-size: 24px; margin-bottom: 5px; }
+        p { color: #555; margin-bottom: 30px; font-size: 14px; }
+        h2 { color: #2c3e50; border-bottom: 2px solid #27ae60; padding-bottom: 10px; margin-top: 10px; font-size: 20px; }
+        .card-box { background: white; padding: 25px; border-radius: 8px; box-shadow: 0 4px 6px rgba(0,0,0,0.1); margin-bottom: 40px; overflow: hidden; }
+        table { font-size: 0.85em; width: 100% !important; }
+        th { background-color: #27ae60 !important; color: white !important; text-transform: uppercase; font-weight: 600; }
+        td { max-width: 300px; white-space: normal !important; word-wrap: break-word; vertical-align: top; }
+        .dataTables_wrapper { padding-top: 10px; }
+    </style>
+</head>
+<body>
+
+    <h1>Supplementary Material S2: ACRES RS Suitability Matrix</h1>
+    <p>Data synchronized directly from your live <strong>data.csv</strong> spreadsheet layout. Use filters to query columns instantly.</p>
+
+    <div id="tables-container">
+        <p style="text-align: center; color: #7f8c8d;">Reading data.csv spreadsheet data...</p>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.7.0.min.js"></script>
+    <script src="https://cdn.datatables.net/1.13.6/js/jquery.dataTables.min.js"></script>
+    <script src="https://cdn.datatables.net/responsive/2.5.0/js/dataTables.responsive.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.4.1/papaparse.min.js"></script>
+
+    <script>
+        const csvFilePath = "data.csv";
+
+        Papa.parse(csvFilePath, {
+            download: true,
+            header: true,
+            skipEmptyLines: true,
+            complete: function(results) {
+                const data = results.data;
+                const container = document.getElementById('tables-container');
+                container.innerHTML = "";
+
+                if (data.length === 0) {
+                    container.innerHTML = "<p>Empty rows discovered inside data.csv.</p>";
+                    return;
+                }
+
+                const groups = [...new Set(data.map(item => item["Score Card"] || item["Scorecard"]))].filter(g => g);
+
+                groups.forEach(groupName => {
+                    const section = document.createElement('div');
+                    section.className = 'card-box';
+                    section.innerHTML = `<h2>${groupName}</h2>`;
+
+                    const table = document.createElement('table');
+                    table.className = 'display nowrap responsive';
+                    table.style.width = "100%";
+
+                    section.appendChild(table);
+                    container.appendChild(section);
+
+                    const filteredData = data.filter(row => (row["Score Card"] || row["Scorecard"]) === groupName);
+
+                    const columnsConfig = Object.keys(filteredData[0]).map(key => ({
+                        title: key,
+                        data: key,
+                        defaultContent: "<em>-</em>"
+                    }));
+
+                    $(table).DataTable({
+                        data: filteredData,
+                        columns: columnsConfig,
+                        responsive: true,
+                        pageLength: 10,
+                        searching: true,
+                        ordering: true,
+                        lengthChange: false,
+                        order: []
+                    });
+                });
+            },
+            error: function(err) {
+                document.getElementById('tables-container').innerHTML =
+                    `<p style="color:red;">Error loading data.csv file content.</p>`;
+            }
+        });
+    </script>
+</body>
+</html>
