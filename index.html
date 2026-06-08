@@ -55,7 +55,7 @@
                     section.className = 'card-box';
                     section.innerHTML = `<h2>${sheetName}</h2>`;
 
-                    // SPECIAL CASE: References sheet(s) – render as HTML directly
+                    // 1) Special handling for References-like sheets
                     if (sheetName.toLowerCase().includes("reference")) {
                         const htmlTable = XLSX.utils.sheet_to_html(worksheet);
                         if (!htmlTable || htmlTable.trim() === "") {
@@ -67,7 +67,7 @@
                         return;
                     }
 
-                    // Default case: matrix-type sheet → DataTables
+                    // 2) Default: matrix sheets go through DataTables
                     const jsonData = XLSX.utils.sheet_to_json(worksheet, { defval: "" });
 
                     if (jsonData.length === 0) {
