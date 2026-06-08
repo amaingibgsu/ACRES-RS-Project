@@ -50,11 +50,25 @@
 
                 workbook.SheetNames.forEach(sheetName => {
                     const worksheet = workbook.Sheets[sheetName];
-                    const jsonData = XLSX.utils.sheet_to_json(worksheet, { defval: "" });
 
                     const section = document.createElement('div');
                     section.className = 'card-box';
                     section.innerHTML = `<h2>${sheetName}</h2>`;
+
+                    // SPECIAL CASE: References sheet(s) – render as HTML directly
+                    if (sheetName.toLowerCase().includes("reference")) {
+                        const htmlTable = XLSX.utils.sheet_to_html(worksheet);
+                        if (!htmlTable || htmlTable.trim() === "") {
+                            section.innerHTML += "<p>This worksheet is empty.</p>";
+                        } else {
+                            section.innerHTML += htmlTable;
+                        }
+                        container.appendChild(section);
+                        return;
+                    }
+
+                    // Default case: matrix-type sheet → DataTables
+                    const jsonData = XLSX.utils.sheet_to_json(worksheet, { defval: "" });
 
                     if (jsonData.length === 0) {
                         section.innerHTML += "<p>This worksheet is empty.</p>";
